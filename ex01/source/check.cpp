@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 14:16:28 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/14 15:16:47 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/09/14 17:11:11 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -44,6 +44,8 @@ bool	CheckPhoneNumber(std::string phonenumber)
 
 bool	CheckFirstName(std::string firstname)
 {
+	if (firstname.length() == 0)
+		return false;
 	for (int i = 0; i < (int)firstname.length(); i++)
 	{
 		if (std::isalpha(firstname[i]) == false && firstname[i] != '-')
@@ -54,6 +56,8 @@ bool	CheckFirstName(std::string firstname)
 
 bool	CheckLastName(std::string lastname)
 {
+	if (lastname.length() == 0)
+		return false;
 	for (int i = 0; i < (int)lastname.length(); i++)
 	{
 		if (std::isalpha(lastname[i]) == false && lastname[i] != '-' && lastname[i] != ' ')

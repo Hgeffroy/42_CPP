@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
@@ -6,16 +6,15 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:19:09 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/14 15:17:45 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/09/19 09:59:12 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
 # include <iostream>
 # include <string>
-# include <array>
 # include <cstdlib>
 # include <iomanip>
 
@@ -25,8 +24,8 @@
 class	PhoneBook
 {
 	private:
-		std::array<Contact, 8>	repo;
-		int						nb;
+		Contact	repo[8];
+		int		nb;
 		
 	public:
 		PhoneBook();

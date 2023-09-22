@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:49:41 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/14 15:18:21 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/09/19 09:58:09 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "phonebook.hpp"
 
@@ -42,7 +42,7 @@ int	main(void)
 			std::getline(std::cin, line);
 			while (test.CheckIndex(line) == false)
 				std::getline(std::cin, line);
-			test.PrintDetailedContact(std::stoi(line));
+			test.PrintDetailedContact(std::atoi(line.c_str()));
 		}
 		else
 		{

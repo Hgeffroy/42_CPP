@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:19:04 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/13 16:36:30 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/09/14 16:23:46 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -30,8 +30,15 @@ class	Contact
 		Contact();
 		~Contact();
 		void	SetContact(int index);
+		void	SetFirstName();
+		void	SetLastName();
+		void	SetNickname();
+		void	SetPhoneNumber();
+		void	SetDarkestSecret();
 		void	PrintContact();
 		void	PrintOneContact();
 };
+
+
 
 #endif
