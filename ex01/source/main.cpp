@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:49:41 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/22 13:14:01 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/09/22 13:24:23 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ int	main(void)
 		{
 			if (test.OneContact() == false)
 			{
-				std::cout << "Please add a contact before" << std::endl;
+				std::cout << YELLOW"Please add a contact before"END << std::endl;
 				continue ;
 			}
 			test.PrintPhonebook();
-			std::cout << "Choose a contact to display : ";
+			std::cout << YELLOW"Choose a contact to display : "END;
 			std::getline(std::cin, line);
 			if (std::cin.eof())
 				return (-1);
@@ -62,7 +62,7 @@ int	main(void)
 		}
 		else
 		{
-			std::cout << line << ": Command not found" << std::endl;
+			std::cout << line << RED": Command not found"END << std::endl;
 		}
 	}
 	return 0;

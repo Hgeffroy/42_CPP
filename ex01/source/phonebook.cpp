@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:25:53 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/22 13:15:43 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/09/22 13:25:39 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,17 +100,17 @@ bool	PhoneBook::CheckIndex(std::string strindex)
 	buffer >> index;
 	if (strindex.length() != 1)
 	{
-		std::cout << "Wrong format, please try again : ";
+		std::cout << RED"Wrong format, please try again : "END;
 		return false;
 	}
 	else if (std::isdigit(strindex[0]) == false)
 	{
-		std::cout << "Wrong format, please try again : ";
+		std::cout << RED"Wrong format, please try again : "END;
 		return false;
 	}
 	else if (index >= nb)
 	{
-		std::cout << "You haven't that much friends ! Please try again : ";
+		std::cout << RED"You haven't that much friends ! Please try again : "END;
 		return false;
 	}
 	return(true);

@@ -6,12 +6,11 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 14:16:28 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/22 13:10:38 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/09/22 13:23:15 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "phonebook.hpp"
 
 bool	CheckPhoneNumber(std::string phonenumber)
 {
@@ -79,8 +78,8 @@ bool	CheckNickname(std::string nickname)
 void	PrintMenu(void)
 {
 	std::cout << std::endl;
-	std::cout << "Write ADD to add a contact" << std::endl;
-	std::cout << "Write SEARCH to find a contact" << std::endl;
-	std::cout << "Write EXIT to exit the phonebook" << std::endl;
+	std::cout << GREEN"Write ADD to add a contact"END << std::endl;
+	std::cout << GREEN"Write SEARCH to find a contact"END << std::endl;
+	std::cout << GREEN"Write EXIT to exit the phonebook"END << std::endl;
 	std::cout << std::endl;
 }

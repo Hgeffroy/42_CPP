@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:25:21 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/22 13:00:44 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/09/22 13:24:49 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	Contact::SetFirstName()
 		return (-1);
 	while (CheckFirstName(FirstName) == false)
 	{
-		std::cout << "Wrong format, please try again : ";
+		std::cout << RED"Wrong format, please try again : "END;
 		std::getline(std::cin, FirstName);
 		if (std::cin.eof())
 			return (-1);
@@ -46,7 +46,7 @@ int	Contact::SetLastName()
 		return (-1);
 	while (CheckLastName(LastName) == false)
 	{
-		std::cout << "Wrong format, please try again : ";
+		std::cout << RED"Wrong format, please try again : "END;
 		std::getline(std::cin, LastName);
 		if (std::cin.eof())
 			return (-1);
@@ -62,7 +62,7 @@ int	Contact::SetNickname()
 		return (-1);
 	while (CheckNickname(Nickname) == false)
 	{
-		std::cout << "Wrong format, please try again : ";
+		std::cout << RED"Wrong format, please try again : "END;
 		std::getline(std::cin, Nickname);
 		if (std::cin.eof())
 			return (-1);
@@ -78,7 +78,7 @@ int	Contact::SetPhoneNumber()
 		return (-1);
 	while (CheckPhoneNumber(PhoneNumber) == false)
 	{
-		std::cout << "Wrong format, please try again : ";
+		std::cout << RED"Wrong format, please try again : "END;
 		std::getline(std::cin, PhoneNumber);
 		if (std::cin.eof())
 			return (-1);
@@ -94,7 +94,7 @@ int	Contact::SetDarkestSecret()
 		return (-1);
 	while (CheckNickname(DarkestSecret) == false)
 	{
-		std::cout << "Wrong format, please try again : ";
+		std::cout << RED"Wrong format, please try again : "END;
 		std::getline(std::cin, DarkestSecret);
 		if (std::cin.eof())
 			return (-1);
