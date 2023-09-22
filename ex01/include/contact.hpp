@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:19:04 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/14 16:23:46 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:57:00 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
@@ -30,11 +30,11 @@ class	Contact
 		Contact();
 		~Contact();
 		void	SetContact(int index);
-		void	SetFirstName();
-		void	SetLastName();
-		void	SetNickname();
-		void	SetPhoneNumber();
-		void	SetDarkestSecret();
+		int		SetFirstName();
+		int		SetLastName();
+		int		SetNickname();
+		int		SetPhoneNumber();
+		int		SetDarkestSecret();
 		void	PrintContact();
 		void	PrintOneContact();
 };

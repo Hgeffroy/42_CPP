@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   check.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 14:16:28 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/14 17:11:11 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/09/22 13:10:38 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include <iostream>
 #include <string>
@@ -75,8 +75,12 @@ bool	CheckNickname(std::string nickname)
 	}
 	return true;
 }
-/*
-Prenoms : lettres et -
-Noms : Espaces lettres et tirets
-Surnoms et Darkest secret : is ascii ?
-*/
+
+void	PrintMenu(void)
+{
+	std::cout << std::endl;
+	std::cout << "Write ADD to add a contact" << std::endl;
+	std::cout << "Write SEARCH to find a contact" << std::endl;
+	std::cout << "Write EXIT to exit the phonebook" << std::endl;
+	std::cout << std::endl;
+}

@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:25:21 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/14 17:03:26 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/09/22 13:00:44 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "phonebook.hpp"
 
@@ -22,114 +22,99 @@ Contact::~Contact(void)
 	std::cout << "Default Contact destructor called" << std::endl;
 }
 
-void	Contact::SetFirstName()
+int	Contact::SetFirstName()
 {
-	int	count;
-	
-	count = 0;
 	std::cout << "First name : ";
 	std::getline(std::cin, FirstName);
+	if (std::cin.eof())
+		return (-1);
 	while (CheckFirstName(FirstName) == false)
 	{
-		if (count > 2)
-		{
-			std::cout << "Fuck you" << std::endl;
-			exit(0);
-		}
-		count++;
 		std::cout << "Wrong format, please try again : ";
 		std::getline(std::cin, FirstName);
+		if (std::cin.eof())
+			return (-1);
 	}
+	return (0);
 }
 
-void	Contact::SetLastName()
+int	Contact::SetLastName()
 {
-	int	count;
-	
-	count = 0;
 	std::cout << "Last name : ";
 	std::getline(std::cin, LastName);
+	if (std::cin.eof())
+		return (-1);
 	while (CheckLastName(LastName) == false)
 	{
-		if (count > 2)
-		{
-			std::cout << "Fuck you" << std::endl;
-			exit(0);
-		}
-		count++;
 		std::cout << "Wrong format, please try again : ";
 		std::getline(std::cin, LastName);
+		if (std::cin.eof())
+			return (-1);
 	}
+	return (0);
 }
 
-void	Contact::SetNickname()
+int	Contact::SetNickname()
 {
-	int	count;
-	
-	count = 0;
 	std::cout << "Nickname : ";
 	std::getline(std::cin, Nickname);
+	if (std::cin.eof())
+		return (-1);
 	while (CheckNickname(Nickname) == false)
 	{
-		if (count > 2)
-		{
-			std::cout << "Fuck you" << std::endl;
-			exit(0);
-		}
-		count++;
 		std::cout << "Wrong format, please try again : ";
 		std::getline(std::cin, Nickname);
+		if (std::cin.eof())
+			return (-1);
 	}
+	return (0);
 }
 
-void	Contact::SetPhoneNumber()
+int	Contact::SetPhoneNumber()
 {
-	int	count;
-	
-	count = 0;
 	std::cout << "Phone number : ";
 	std::getline(std::cin, PhoneNumber);
+	if (std::cin.eof())
+		return (-1);
 	while (CheckPhoneNumber(PhoneNumber) == false)
 	{
-		if (count > 2)
-		{
-			std::cout << "Fuck you" << std::endl;
-			exit(0);
-		}
-		count++;
 		std::cout << "Wrong format, please try again : ";
 		std::getline(std::cin, PhoneNumber);
+		if (std::cin.eof())
+			return (-1);
 	}
+	return (0);
 }
 
-void	Contact::SetDarkestSecret()
+int	Contact::SetDarkestSecret()
 {
-	int	count;
-	
-	count = 0;
 	std::cout << "Darkest secret : ";
 	std::getline(std::cin, DarkestSecret);
+	if (std::cin.eof())
+		return (-1);
 	while (CheckNickname(DarkestSecret) == false)
 	{
-		if (count > 2)
-		{
-			std::cout << "Fuck you" << std::endl;
-			exit(0);
-		}
-		count++;
 		std::cout << "Wrong format, please try again : ";
 		std::getline(std::cin, DarkestSecret);
+		if (std::cin.eof())
+			return (-1);
 	}
+	return (0);
 }
 
 void	Contact::SetContact(int index)
 {
 	Index = index;
-	SetFirstName();
-	SetLastName();
-	SetNickname();
-	SetPhoneNumber();
-	SetDarkestSecret();
+	if (SetFirstName() < 0)
+		return ;
+	if (SetLastName())
+		return ;
+	if (SetNickname())
+		return ;
+	if (SetPhoneNumber())
+		return ;
+	if (SetDarkestSecret())
+		return ;
 }
 
 void	Contact::PrintContact()

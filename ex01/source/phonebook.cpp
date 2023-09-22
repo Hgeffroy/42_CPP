@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:25:53 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/19 09:57:57 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/09/22 13:15:43 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,22 +92,34 @@ void	PhoneBook::PrintDetailedContact(int index)
 	repo[index].PrintOneContact();
 }
 
-bool	PhoneBook::CheckIndex(std::string index)
+bool	PhoneBook::CheckIndex(std::string strindex)
 {
-	if (index.length() != 1)
+	int	index;
+	
+	std::istringstream	buffer(strindex);
+	buffer >> index;
+	if (strindex.length() != 1)
 	{
 		std::cout << "Wrong format, please try again : ";
 		return false;
 	}
-	else if (std::isdigit(index[0]) == false)
+	else if (std::isdigit(strindex[0]) == false)
 	{
 		std::cout << "Wrong format, please try again : ";
 		return false;
 	}
-	else if (std::atoi(index.c_str()) >= nb)
+	else if (index >= nb)
 	{
 		std::cout << "You haven't that much friends ! Please try again : ";
 		return false;
 	}
 	return(true);
+}
+
+bool	PhoneBook::OneContact()
+{
+	if (nb == 0)
+		return false;
+	else
+		return true;
 }
