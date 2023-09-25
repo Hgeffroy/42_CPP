@@ -3,28 +3,28 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/09/22 14:55:02 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/09/23 13:27:13 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #--variables-------------------------------------------------------------------#
 
-NAME            =       job
+NAME            =       Zombie
 DEBUG           =       no
 
 #--includes & libraries--------------------------------------------------------#
 
-INC_DIR         =       include/
+INC_DIR         =       ./
 
-HEADERS			=		Account.hpp
+HEADERS			=		Zombie.hpp
 
 #--sources & objects-----------------------------------------------------------#
 
-SOURCES			=		Account.cpp \
-						tests.cpp
+SOURCES			=		Zombie.cpp \
+						main.cpp
 						
 OBJ_DIR         =       .objs/
 

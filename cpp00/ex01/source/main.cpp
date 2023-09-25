@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:49:41 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/22 13:24:23 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/09/23 12:56:03 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Faire les checks.
 */
 int	main(void)
 {
-	PhoneBook 	test;
+	PhoneBook 	phonebook;
 	std::string	line;
 	int			index;
 
@@ -32,7 +32,7 @@ int	main(void)
 			return 0;
 		else if (line == "ADD")
 		{
-			test.AddContact(index);
+			phonebook.AddContact(index);
 			if (index == 7)
 				index = 0;
 			else
@@ -40,17 +40,17 @@ int	main(void)
 		}
 		else if (line == "SEARCH")
 		{
-			if (test.OneContact() == false)
+			if (phonebook.OneContact() == false)
 			{
 				std::cout << YELLOW"Please add a contact before"END << std::endl;
 				continue ;
 			}
-			test.PrintPhonebook();
+			phonebook.PrintPhonebook();
 			std::cout << YELLOW"Choose a contact to display : "END;
 			std::getline(std::cin, line);
 			if (std::cin.eof())
 				return (-1);
-			while (test.CheckIndex(line) == false)
+			while (phonebook.CheckIndex(line) == false)
 			{
 				std::getline(std::cin, line);
 				if (std::cin.eof())
@@ -58,7 +58,7 @@ int	main(void)
 			}
 			std::istringstream	buffer(line);
 			buffer >> index;
-			test.PrintDetailedContact(index);
+			phonebook.PrintDetailedContact(index);
 		}
 		else
 		{
