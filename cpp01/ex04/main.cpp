@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 13:27:34 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/06 08:56:52 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/06 13:40:40 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/06 15:09:21 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+#include <string>
+#include <fstream>
 
-Zombie*	Zombie::zombieHorde(int N, std::string name)
+int	main()
 {
-	Zombie	*horde = new Zombie[N];
+	std::string		filename;
+	std::string		s1;
+	std::string		s2;
+	std::size_t		found;
+	std::ifstream	ifs;
 
-	for (int i = 0; i < N; i++)
-		horde[i].name = name;
+	ifs.open(filename);
 
-	return (horde);
+	if (ifs.bad())
+		return (0);
+
+	
+
+	ifs.close();
+	return (0);
 }

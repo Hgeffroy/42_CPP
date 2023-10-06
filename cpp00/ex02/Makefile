@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+         #
+#    By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/09/23 12:39:05 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/10/06 10:24:22 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ OBJECTS =       $(addprefix $(OBJ_DIR), $(SOURCES:.cpp=.o))
 all:
 		$(MAKE) $(NAME) -j
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJECTS) $(HEADERS)
 		$(CPP) $(CFLAGS) $^ -o $@
 
 $(OBJ_DIR)%.o: %.cpp $(HEADERS)

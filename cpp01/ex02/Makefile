@@ -6,27 +6,24 @@
 #    By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/10/06 10:23:55 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/10/06 10:23:42 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #--variables-------------------------------------------------------------------#
 
-NAME            =       Zombie
+NAME            =       pointersAndReferences
 DEBUG           =       no
 
 #--includes & libraries--------------------------------------------------------#
 
 INC_DIR         =       ./
 
-HEADERS			=		Zombie.hpp
+HEADERS			=	
 
 #--sources & objects-----------------------------------------------------------#
 
-SOURCES			=		Zombie.cpp \
-						newZombie.cpp \
-						randomChump.cpp \
-						main.cpp
+SOURCES			=		main.cpp
 						
 OBJ_DIR         =       .objs/
 

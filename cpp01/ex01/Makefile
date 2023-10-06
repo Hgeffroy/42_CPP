@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+         #
+#    By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/09/23 13:27:13 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/10/06 10:23:48 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ HEADERS			=		Zombie.hpp
 #--sources & objects-----------------------------------------------------------#
 
 SOURCES			=		Zombie.cpp \
+						zombieHorde.cpp \
 						main.cpp
 						
 OBJ_DIR         =       .objs/
@@ -54,7 +55,7 @@ OBJECTS =       $(addprefix $(OBJ_DIR), $(SOURCES:.cpp=.o))
 all:
 		$(MAKE) $(NAME) -j
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJECTS) $(HEADERS)
 		$(CPP) $(CFLAGS) $^ -o $@
 
 $(OBJ_DIR)%.o: %.cpp $(HEADERS)

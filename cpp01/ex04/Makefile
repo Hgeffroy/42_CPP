@@ -6,27 +6,29 @@
 #    By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/10/06 10:23:55 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/10/06 11:24:48 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #--variables-------------------------------------------------------------------#
 
-NAME            =       Zombie
+NAME            =       Weapon
 DEBUG           =       no
 
 #--includes & libraries--------------------------------------------------------#
 
 INC_DIR         =       ./
 
-HEADERS			=		Zombie.hpp
+HEADERS			=		HumanA.hpp \
+						HumanB.hpp \
+						Weapon.hpp
 
 #--sources & objects-----------------------------------------------------------#
 
-SOURCES			=		Zombie.cpp \
-						newZombie.cpp \
-						randomChump.cpp \
-						main.cpp
+SOURCES			=		main.cpp \
+						HumanA.cpp \
+						HumanB.cpp \
+						Weapon.cpp
 						
 OBJ_DIR         =       .objs/
 
