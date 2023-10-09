@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:25:27 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/06 15:30:12 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:10:23 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
+
+Weapon::Weapon()
+{
+	
+}
 
 Weapon::Weapon(std::string newType) : type(newType)
 {

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/10/06 11:24:48 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/10/09 16:44:58 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ all:
 		$(MAKE) $(NAME) -j
 
 $(NAME): $(OBJECTS) $(HEADERS)
-		$(CPP) $(CFLAGS) $^ -o $@
+		$(CPP) $(CFLAGS) $(OBJECTS) -o $@
 
 $(OBJ_DIR)%.o: %.cpp $(HEADERS)
 		mkdir -p $(dir $@)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:44:33 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/06 11:34:20 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:17:52 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	HumanB(std::string newName);
 	~HumanB();
 	void	attack();
-	void	setWeapon(Weapon newWeapon);
+	void	setWeapon(Weapon &newWeapon);
 };
 
 
