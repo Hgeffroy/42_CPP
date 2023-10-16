@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:40:40 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/13 13:59:55 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/16 11:29:28 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 std::string	replace(char *s, std::string to_find, std::string to_replace)
 {
-	size_t		found;
+	size_t		found = 0;
 	std::string	buffer = s;
 	
 	//Faire des boucles et tout.
 	while (1)
 	{
 		found = buffer.find(to_find, found);
-		if (found == std::string::npos);
+		if (found == std::string::npos)
 			break;
 		buffer = buffer.erase(found, to_find.length());
 		buffer = buffer.insert(found, to_replace);
@@ -37,7 +37,6 @@ int	main(int ac, char **av)
 	if (ac != 4) // check errors
 		return (-1);
 		
-	std::ofstream	ofs;
 	std::ifstream	is(av[1], std::ifstream::binary);
 	
 	if (!is) 
@@ -58,9 +57,16 @@ int	main(int ac, char **av)
 
 	std::string	str = replace(buffer, av[2], av[3]);
 	
+
+	
+	std::ofstream	ofs;
+	ofs.open("out");
+	ofs << str;
+	ofs.close();
+	
+	
 	is.close();
 
-	// Mettre la string dans ofs et mettre ofs dans un file, cf video ?
 	delete[] buffer;
 	return (0);
 }

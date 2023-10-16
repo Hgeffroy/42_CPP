@@ -6,29 +6,22 @@
 #    By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/10/13 08:46:13 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/10/16 11:29:44 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #--variables-------------------------------------------------------------------#
 
-NAME            =       Weapon
+NAME            =       sed
 DEBUG           =       no
 
 #--includes & libraries--------------------------------------------------------#
 
 INC_DIR         =       ./
 
-HEADERS			=		HumanA.hpp \
-						HumanB.hpp \
-						Weapon.hpp
-
 #--sources & objects-----------------------------------------------------------#
 
 SOURCES			=		main.cpp \
-						HumanA.cpp \
-						HumanB.cpp \
-						Weapon.cpp
 						
 OBJ_DIR         =       .objs/
 
@@ -61,7 +54,7 @@ all:
 $(NAME): $(OBJECTS)
 		$(CPP) $(CFLAGS) $^ -o $@
 
-$(OBJ_DIR)%.o: %.cpp $(HEADERS)
+$(OBJ_DIR)%.o: %.cpp
 		mkdir -p $(dir $@)
 		$(CPP) $(CFLAGS) -c $< -o $@
 
