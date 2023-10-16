@@ -6,14 +6,13 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:19:04 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/09/22 12:57:00 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/13 08:43:54 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-# include <iostream>
 # include <string>
 
 class	Contact
