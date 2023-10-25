@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:40:46 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/19 12:46:52 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/19 10:37:26 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/19 10:38:09 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-Zombie::Zombie()
-{
-	std::cout << "Zombie: Default constructor called" << std::endl;
-}
 
-Zombie::~Zombie()
+int main( void ) 
 {
-	std::cout << "Zombie: Default destructor called" << std::endl;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+	
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
 }

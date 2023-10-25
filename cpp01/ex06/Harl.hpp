@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:40:46 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/19 12:46:52 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/14 08:56:40 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/16 16:15:59 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-Zombie::Zombie()
-{
-	std::cout << "Zombie: Default constructor called" << std::endl;
-}
+# include <iostream>
+# include <string>
 
-Zombie::~Zombie()
+class Harl
 {
-	std::cout << "Zombie: Default destructor called" << std::endl;
-}
+	private:
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
 
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+	public:
+		Harl(void);
+		~Harl(void);
+		void	complain(std::string level);
+};
+
+#endif

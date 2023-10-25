@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:40:46 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/19 12:46:52 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/24 08:19:03 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/24 10:47:08 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "ScavTrap.hpp"
 
-Zombie::Zombie()
+int	main()
 {
-	std::cout << "Zombie: Default constructor called" << std::endl;
-}
+	ScavTrap	s("Isko");
 
-Zombie::~Zombie()
-{
-	std::cout << "Zombie: Default destructor called" << std::endl;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	s.attack("the frisbee");
+	s.takeDamage(5);
+	s.beRepaired(3);
+	s.takeDamage(8);
+	s.attack("the ball");
+	s.guardGate();
+	
 }

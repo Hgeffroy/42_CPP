@@ -6,7 +6,7 @@
 #    By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/10/13 08:45:55 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/10/25 09:58:06 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,8 +53,8 @@ OBJECTS =       $(addprefix $(OBJ_DIR), $(SOURCES:.cpp=.o))
 all:
 		$(MAKE) $(NAME) -j
 
-$(NAME): $(OBJECTS)
-		$(CPP) $(CFLAGS) $^ -o $@
+$(NAME): $(OBJECTS) $(HEADERS)
+		$(CPP) $(CFLAGS) $(OBJECTS) -o $@
 
 $(OBJ_DIR)%.o: %.cpp $(HEADERS)
 		mkdir -p $(dir $@)

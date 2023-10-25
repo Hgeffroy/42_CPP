@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:25:27 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/09 17:10:23 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/19 12:44:00 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Weapon::Weapon()
 {
-	
+	std::cout << "Weapon: Default constructor called" << std::endl;
 }
 
 Weapon::Weapon(std::string newType) : type(newType)
 {
-	
+	std::cout << "Weapon: Default destructor called" << std::endl;
 }
 
 Weapon::~Weapon()

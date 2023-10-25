@@ -6,26 +6,27 @@
 #    By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/10/25 09:57:07 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/10/25 10:01:46 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #--variables-------------------------------------------------------------------#
 
-NAME            =       Zombie
+NAME            =       claptrap
 DEBUG           =       no
 
 #--includes & libraries--------------------------------------------------------#
 
 INC_DIR         =       ./
 
-HEADERS			=		Zombie.hpp
+HEADERS			=		ClapTrap.hpp \
+						ScavTrap.hpp
 
 #--sources & objects-----------------------------------------------------------#
 
-SOURCES			=		Zombie.cpp \
-						zombieHorde.cpp \
-						main.cpp
+SOURCES			=		main.cpp \
+						ClapTrap.cpp \
+						ScavTrap.cpp
 						
 OBJ_DIR         =       .objs/
 

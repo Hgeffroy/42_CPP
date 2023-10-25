@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:40:40 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/16 11:29:28 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:45:02 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ std::string	replace(char *s, std::string to_find, std::string to_replace)
 	size_t		found = 0;
 	std::string	buffer = s;
 	
-	//Faire des boucles et tout.
 	while (1)
 	{
 		found = buffer.find(to_find, found);
@@ -34,14 +33,20 @@ std::string	replace(char *s, std::string to_find, std::string to_replace)
 
 int	main(int ac, char **av)
 {
-	if (ac != 4) // check errors
+	std::string	outfilename;
+	
+	if (ac != 4)
+	{
+		std::cout << "Wrong format, you need a filename, a string to replace and a string to replace with." << std::endl;
 		return (-1);
+	}
 		
 	std::ifstream	is(av[1], std::ifstream::binary);
 	
 	if (!is) 
 	{
-		return (-1); // print un msg
+		std::cout << "Couldn't open file." << std::endl;
+		return (-1);
 	}
 	
 	// get length of file:
@@ -52,18 +57,18 @@ int	main(int ac, char **av)
 	// allocate memory:
 	char *buffer = new char[length];
 
-	// read data as a block:
+	// read data:
 	is.read(buffer,length);
 
 	std::string	str = replace(buffer, av[2], av[3]);
-	
+	// Si rien n'est modifie, il faut pas creer le fichier de sortie.
 
-	
 	std::ofstream	ofs;
-	ofs.open("out");
+	outfilename = av[1];
+	outfilename.append(".replace");
+	ofs.open(outfilename.c_str());
 	ofs << str;
 	ofs.close();
-	
 	
 	is.close();
 

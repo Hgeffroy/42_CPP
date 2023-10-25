@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:40:46 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/19 12:46:52 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/19 10:37:26 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/20 15:29:58 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-Zombie::Zombie()
+int main( void ) 
 {
-	std::cout << "Zombie: Default constructor called" << std::endl;
-}
-
-Zombie::~Zombie()
-{
-	std::cout << "Zombie: Default destructor called" << std::endl;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	//Faire des tests
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:31:39 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/06 15:22:39 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/19 12:44:43 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 HumanA::HumanA(std::string newName, Weapon &newWeapon) : name(newName), weapon(newWeapon)
 {
-
+	std::cout << "HumanA: Default constructor called" << std::endl;
 }
 
 HumanA::~HumanA()
 {
-	
+	std::cout << "HumanA: Default destructor called" << std::endl;
 }
 
 void	HumanA::attack()

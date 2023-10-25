@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 08:56:42 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/19 12:43:20 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/19 12:42:57 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
-	const messages		tab[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	const std::string	tablevel[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	const std::string	tablevel[4] = {"ERROR", "WARNING", "INFO", "DEBUG"};
 	int					i = 0;
 	
 	while (i < 4)
@@ -55,8 +54,21 @@ void	Harl::complain(std::string level)
 		i++;
 	}
 	
-	if (i == 4)
-		std::cout << "No such level dumbass" << std::endl;
-	
-	(this->*(tab[i]))();
+	switch (i)
+	{
+		case 0:
+			debug();
+			//intentional fallthrough
+		case 1:
+			info();
+			//intentional fallthrough
+		case 2:
+			warning();
+			//intentional fallthrough
+		case 3:
+			error();
+			break;
+		default:
+			std::cout << "No such level dumbass" << std::endl;
+	}
 }

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:40:46 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/19 12:46:52 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/24 12:49:05 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/24 15:32:23 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-Zombie::Zombie()
-{
-	std::cout << "Zombie: Default constructor called" << std::endl;
-}
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
 
-Zombie::~Zombie()
+class	DiamondTrap : virtual public FragTrap, virtual public ScavTrap
 {
-	std::cout << "Zombie: Default destructor called" << std::endl;
-}
+	private:
 
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+		_name
+	
+	public:
+	
+	
+	
+};
+
+#endif

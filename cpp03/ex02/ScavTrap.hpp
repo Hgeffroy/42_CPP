@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:40:46 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/19 12:46:52 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/24 09:46:41 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/24 15:34:26 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-Zombie::Zombie()
-{
-	std::cout << "Zombie: Default constructor called" << std::endl;
-}
+# include "ClapTrap.hpp"
 
-Zombie::~Zombie()
+class ScavTrap : public ClapTrap
 {
-	std::cout << "Zombie: Default destructor called" << std::endl;
-}
+	
+private:
+	
+	ScavTrap();
+	
+public:
 
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+	ScavTrap(std::string param);
+	~ScavTrap();
+
+	ScavTrap	&operator=(ScavTrap const &param);
+
+	void	guardGate();
+		
+};
+
+#endif

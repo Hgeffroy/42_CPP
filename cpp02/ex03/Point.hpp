@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:40:46 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/19 12:46:52 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/20 12:42:14 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/20 15:12:32 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef POINT_HPP
+# define POINT_HPP
 
-Zombie::Zombie()
-{
-	std::cout << "Zombie: Default constructor called" << std::endl;
-}
+#include "Fixed.hpp"
 
-Zombie::~Zombie()
+class Point
 {
-	std::cout << "Zombie: Default destructor called" << std::endl;
-}
+private:
 
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+	Fixed const	x;
+	Fixed const	y;
+	
+public:
+
+	Point();
+	Point(Point const &param);
+	Point(float const paramx, float const paramy);
+	~Point();
+
+	Point	&operator=(Point const &param);
+	float	operator*(Point &param);
+
+	Fixed	getY() const;
+	Fixed	getX() const;
+	
+};
+
+#endif

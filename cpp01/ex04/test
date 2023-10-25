@@ -1,0 +1,5 @@
+./sed infile lala la
+./sed infile owrj q
+./sed infile
+./sed infile lala la youpi
+./sed infile youpi ha

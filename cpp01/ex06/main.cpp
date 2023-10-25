@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:40:46 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/19 12:46:52 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/14 08:56:45 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/16 16:16:29 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-Zombie::Zombie()
+int main(int ac, char **av)
 {
-	std::cout << "Zombie: Default constructor called" << std::endl;
-}
-
-Zombie::~Zombie()
-{
-	std::cout << "Zombie: Default destructor called" << std::endl;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	Harl	harl;
+	
+	if (ac != 2)
+	{
+		std::cout << "Stop complaining so much you little whiner !" << std::endl;		
+		return (1);
+	}
+	harl.complain(av[1]);
+	return (0);
 }

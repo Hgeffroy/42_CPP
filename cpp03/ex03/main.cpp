@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:40:46 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/19 12:46:52 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/24 08:19:03 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/24 12:20:36 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-Zombie::Zombie()
+int	main()
 {
-	std::cout << "Zombie: Default constructor called" << std::endl;
-}
-
-Zombie::~Zombie()
-{
-	std::cout << "Zombie: Default destructor called" << std::endl;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	FragTrap	f("Isko");
+	FragTrap	g;
+	
+	g = f;
+	f.attack("the frisbee");
+	f.takeDamage(5);
+	f.beRepaired(3);
+	f.takeDamage(8);
+	f.attack("the ball");
+	f.highFivesGuys();
+	g.highFivesGuys();
+	
 }

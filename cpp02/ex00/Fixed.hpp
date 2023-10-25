@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:40:46 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/19 12:46:52 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/19 10:37:24 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/19 13:45:27 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-Zombie::Zombie()
-{
-	std::cout << "Zombie: Default constructor called" << std::endl;
-}
+# include <iostream>
 
-Zombie::~Zombie()
+class Fixed
 {
-	std::cout << "Zombie: Default destructor called" << std::endl;
-}
+private:
+	int					nb;
+	static const int	fracBits = 8;
+	
+public:
+	Fixed();
+	Fixed(Fixed const &param);
+	~Fixed();
+	
+	Fixed	&operator=(Fixed const &param);
+	
+	int		getRawBits(void);
+	void	setRawBits(int const raw);
+};
 
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+
+#endif

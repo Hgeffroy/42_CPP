@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:40:46 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/19 12:46:52 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/24 10:51:11 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/24 15:37:06 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-Zombie::Zombie()
-{
-	std::cout << "Zombie: Default constructor called" << std::endl;
-}
+# include "ClapTrap.hpp"
 
-Zombie::~Zombie()
+class FragTrap : public ClapTrap
 {
-	std::cout << "Zombie: Default destructor called" << std::endl;
-}
 
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+private:
+
+	FragTrap();
+	
+public:
+	
+	FragTrap(std::string param);
+	~FragTrap();
+
+	FragTrap	&operator=(FragTrap const &param);
+
+	void	highFivesGuys();
+	
+};
+
+#endif
