@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:42:14 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/20 15:12:32 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/25 12:49:08 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ public:
 	Fixed	getX() const;
 	
 };
+
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
