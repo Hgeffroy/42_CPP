@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:40:40 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/25 09:45:02 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/26 14:10:06 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ std::string	replace(char *s, std::string to_find, std::string to_replace)
 
 int	main(int ac, char **av)
 {
-	std::string	outfilename;
 	
 	if (ac != 4)
 	{
@@ -41,7 +40,7 @@ int	main(int ac, char **av)
 		return (-1);
 	}
 		
-	std::ifstream	is(av[1], std::ifstream::binary);
+	std::ifstream	is(av[1], std::ios::in);
 	
 	if (!is) 
 	{
@@ -55,18 +54,27 @@ int	main(int ac, char **av)
 	is.seekg(0, is.beg);
 
 	// allocate memory:
-	char *buffer = new char[length];
+	char *buffer = new char[length + 1];
+	buffer[length] = 0;
 
 	// read data:
-	is.read(buffer,length);
+	is.read(buffer, length);
 
-	std::string	str = replace(buffer, av[2], av[3]);
+	std::string	str = buffer;
+
+	if (str.find(av[2]) == std::string::npos)
+	{
+		delete[] buffer;
+		return (0);
+	}
+
+	str = replace(buffer, av[2], av[3]);
 	// Si rien n'est modifie, il faut pas creer le fichier de sortie.
 
-	std::ofstream	ofs;
-	outfilename = av[1];
+	std::string	outfilename = av[1];
 	outfilename.append(".replace");
-	ofs.open(outfilename.c_str());
+
+	std::ofstream	ofs(outfilename.c_str(), std::ofstream::out);
 	ofs << str;
 	ofs.close();
 	
