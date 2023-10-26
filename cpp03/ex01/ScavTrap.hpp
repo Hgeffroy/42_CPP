@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:46:41 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/24 15:35:33 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/26 09:58:58 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
 	ScavTrap	&operator=(ScavTrap const &param);
 
 	void	guardGate();
+	void	attack(const std::string &target);
 		
 };
 

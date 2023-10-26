@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:51:11 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/24 15:37:06 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/26 10:48:07 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
 
-private:
+protected:
 
 	FragTrap();
 	
@@ -29,7 +29,7 @@ public:
 
 	FragTrap	&operator=(FragTrap const &param);
 
-	void	highFivesGuys();
+	void			highFivesGuys();
 	
 };
 

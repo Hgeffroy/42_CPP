@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 10:51:11 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/26 10:48:13 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/26 11:15:02 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/26 11:35:30 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include "ClapTrap.hpp"
+# include "Animal.hpp"
 
-class FragTrap : public ClapTrap
+class	Dog : public Animal
 {
-private:
-
-	FragTrap();
-
+	
 public:
 	
-	FragTrap(std::string param);
-	~FragTrap();
-
-	FragTrap	&operator=(FragTrap const &param);
-
-	void	highFivesGuys();
+	Dog();
+	~Dog();
+	Dog(Dog const &param);
 	
+	Dog	&operator=(Dog const &param);
+
+	void		makeSound() const;
+
 };
 
 #endif
