@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 13:00:59 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/26 10:55:09 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:35:06 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ DiamondTrap::DiamondTrap() : name("DiamondTrap")
 DiamondTrap::DiamondTrap(std::string name)
 {
 	this->name = name;
-	this->clap_name = ClapTrap::name + "_clap_name";
+	ClapTrap::name = name + "_clap_name";
 	this->hitPoints = FragTrap::hitPoints;
 	this->energyPoints = ScavTrap::energyPoints;
 	this->attackDamage = FragTrap::attackDamage;
@@ -33,7 +33,7 @@ DiamondTrap::DiamondTrap(std::string name)
 DiamondTrap::DiamondTrap(DiamondTrap const &param)
 {
 	this->name = param.name;
-	this->clap_name = param.clap_name;
+	ClapTrap::name = name + "_clap_name";
 	this->hitPoints = param.hitPoints;
 	this->energyPoints = param.energyPoints;
 	this->attackDamage = param.attackDamage;
@@ -48,7 +48,7 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &param)
 {
 	this->name = param.name;
-	this->clap_name = param.clap_name;
+	ClapTrap::name = name + "_clap_name";
 	this->hitPoints = param.hitPoints;
 	this->energyPoints = param.energyPoints;
 	this->attackDamage = param.attackDamage;
@@ -58,7 +58,7 @@ DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &param)
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout << "Clap name : " << this->clap_name << std::endl;
+	std::cout << "Clap name : " << ClapTrap::name << std::endl;
 	std::cout << "Name : " << this->name << std::endl;
 }
 

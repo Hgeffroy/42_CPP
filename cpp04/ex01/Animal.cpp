@@ -1,39 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 14:13:43 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/26 14:44:28 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/26 11:03:52 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/26 11:36:17 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "Animal.hpp"
 
-WrongCat::WrongCat()
+Animal::Animal() : type("Undefined")
 {
-	this->type = "WrongCat";
-	
-	std::cout << "WrongCat constructor called" << std::endl;
+	std::cout << "Animal constructor called" << std::endl;
 }
 
-WrongCat::~WrongCat()
+Animal::~Animal()
 {
-	std::cout << "WrongCat destructor called" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat const &param)
+Animal::Animal(Animal const &param)
 {
 	this->type = param.type;
 	
-	std::cout << "WrongCat copy constructor called" << std::endl;
+	std::cout << "Animal copy constructor called" << std::endl;
 }
 
-WrongCat	&WrongCat::operator=(WrongCat const &param)
+Animal	&Animal::operator=(Animal const &param)
 {
 	this->type = param.type;
 
 	return (*this);
 }
+
+void	Animal::makeSound() const
+{
+	std::cout << "Random animal sound" << std::endl;
+}
+
+std::string	Animal::getType() const
+{
+	return (this->type);
+}
+
