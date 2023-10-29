@@ -6,42 +6,42 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:03:52 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 09:54:59 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/28 10:20:10 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() : _type("Undefined")
+AAnimal::AAnimal() : _type("Undefined")
 {
-	std::cout << "Animal constructor called" << std::endl;
+	std::cout << "AAnimal constructor called" << std::endl;
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "AAnimal destructor called" << std::endl;
 }
 
-Animal::Animal(Animal const &cpyFrom)
+AAnimal::AAnimal(AAnimal const &cpyFrom)
 {
 	this->_type = cpyFrom._type;
 	
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << "AAnimal copy constructor called" << std::endl;
 }
 
-Animal	&Animal::operator=(Animal const &animal)
+AAnimal	&AAnimal::operator=(AAnimal const &animal)
 {
 	this->_type = animal._type;
 
 	return (*this);
 }
 
-void	Animal::makeSound() const
+void	AAnimal::makeSound() const
 {
 	std::cout << "Random animal sound" << std::endl;
 }
 
-std::string	Animal::getType() const
+std::string	AAnimal::getType() const
 {
 	return (this->_type);
 }

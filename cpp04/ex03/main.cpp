@@ -5,36 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 11:16:11 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 10:14:56 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/28 10:37:35 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/29 08:37:07 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongCat.hpp"
+#include "Ice.hpp"
+#include "Character.hpp"
+#include "MateriaSource.hpp"
+#include "Cure.hpp"
 
-int	main()
+
+int main()
 {
-	int		N = 10;
-	Animal	*tab[N];
+	IMateriaSource* src = new MateriaSource();
 	
-	for (int i = 0; i < N; i++)
-	{
-		if (i % 2)
-			tab[i] = new Cat();
-		else
-			tab[i] = new Dog();
-	}
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 	
-	if (N > 2)
-	{
-		tab[0]->makeSound();
-		tab[1]->makeSound();
-	}
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
 
-	for (int i = 0; i < N; i++)
-		delete tab[i];
+	ICharacter* bob = new Character("bob");
+	
+	me->use(0, *bob);
+	me->use(1, *bob);
+	
+	delete bob;
+	delete me;
+	delete src;
 	
 	return 0;
 }

@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 14:13:43 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 10:01:01 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/28 10:55:02 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/29 08:34:12 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "Ice.hpp"
 
-WrongCat::WrongCat()
+Ice::Ice()
 {
-	this->_type = "WrongCat";
-	
-	std::cout << "WrongCat constructor called" << std::endl;
+	this->_type = "ice";
+	std::cout << "Ice default constructor called" << std::endl;
 }
 
-WrongCat::~WrongCat()
+Ice::~Ice()
 {
-	std::cout << "WrongCat destructor called" << std::endl;
+	std::cout << "Ice default destructor called" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat const &cpyFrom)
+Ice::Ice(Ice const &cpyFrom)
 {
 	this->_type = cpyFrom._type;
 	
-	std::cout << "WrongCat copy constructor called" << std::endl;
+	std::cout << "Ice copy constructor called" << std::endl;
 }
 
-WrongCat	&WrongCat::operator=(WrongCat const &wrongCat)
+Ice	&Ice::operator=(Ice const &ice)
 {
-	this->_type = wrongCat._type;
+	this->_type = ice._type;
 
 	return (*this);
+}
+
+AMateria* Ice::clone() const
+{
+	return (new Ice(*this));
 }

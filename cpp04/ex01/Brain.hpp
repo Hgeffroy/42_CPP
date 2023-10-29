@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 14:14:14 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 10:00:45 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/28 09:24:54 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/28 09:59:08 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "WrongAnimal.hpp"
+# include <string>
+# include <iostream>
 
-class	WrongCat : public WrongAnimal
+class	Brain
 {
+
+private:
+
+	std::string	_ideas[100];
 	
 public:
-	
-	WrongCat();
-	~WrongCat();
-	WrongCat(WrongCat const &cpyFrom);
-	
-	WrongCat	&operator=(WrongCat const &wrongCat);
+
+	Brain();
+	~Brain();
+	Brain(Brain const &cpyFrom);
+
+	Brain &operator=(Brain const &brain);
 
 };
 

@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 14:13:43 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 10:01:01 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/29 08:32:14 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/29 08:33:57 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "Cure.hpp"
 
-WrongCat::WrongCat()
+Cure::Cure()
 {
-	this->_type = "WrongCat";
-	
-	std::cout << "WrongCat constructor called" << std::endl;
+	this->_type = "cure";
+	std::cout << "Cure default constructor called" << std::endl;
 }
 
-WrongCat::~WrongCat()
+Cure::~Cure()
 {
-	std::cout << "WrongCat destructor called" << std::endl;
+	std::cout << "Cure default destructor called" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat const &cpyFrom)
+Cure::Cure(Cure const &cpyFrom)
 {
 	this->_type = cpyFrom._type;
 	
-	std::cout << "WrongCat copy constructor called" << std::endl;
+	std::cout << "Cure copy constructor called" << std::endl;
 }
 
-WrongCat	&WrongCat::operator=(WrongCat const &wrongCat)
+Cure	&Cure::operator=(Cure const &cure)
 {
-	this->_type = wrongCat._type;
+	this->_type = cure._type;
 
 	return (*this);
+}
+
+AMateria* Cure::clone() const
+{
+	return (new Cure(*this));
 }

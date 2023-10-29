@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 14:14:14 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 10:00:45 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/28 14:01:11 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/28 14:02:36 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
-# include "WrongAnimal.hpp"
+# include <string>
+# include <iostream>
+# include "AMateria.hpp"
 
-class	WrongCat : public WrongAnimal
+class IMateriaSource
 {
 	
 public:
-	
-	WrongCat();
-	~WrongCat();
-	WrongCat(WrongCat const &cpyFrom);
-	
-	WrongCat	&operator=(WrongCat const &wrongCat);
 
+	virtual ~IMateriaSource() {}
+	virtual void learnMateria(AMateria*) = 0;
+	virtual AMateria* createMateria(std::string const & type) = 0;
+	
 };
 
 #endif

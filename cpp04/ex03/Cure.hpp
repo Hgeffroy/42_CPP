@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 14:14:14 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 10:00:45 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/29 08:33:01 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/29 08:33:23 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-# include "WrongAnimal.hpp"
+#include "AMateria.hpp"
 
-class	WrongCat : public WrongAnimal
+class	Cure : public AMateria
 {
 	
 public:
-	
-	WrongCat();
-	~WrongCat();
-	WrongCat(WrongCat const &cpyFrom);
-	
-	WrongCat	&operator=(WrongCat const &wrongCat);
+
+	Cure();
+	~Cure();
+	Cure(Cure const &cpyFrom);
+
+	Cure	&operator=(Cure const &cure);
+
+	AMateria* clone() const;
 
 };
 

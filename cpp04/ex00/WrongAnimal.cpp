@@ -6,13 +6,13 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:28:06 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/26 12:28:27 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/28 09:56:45 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : type("Undefined")
+WrongAnimal::WrongAnimal() : _type("Undefined")
 {
 	std::cout << "WrongAnimal constructor called" << std::endl;
 }
@@ -22,16 +22,16 @@ WrongAnimal::~WrongAnimal()
 	std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal const &param)
+WrongAnimal::WrongAnimal(WrongAnimal const &cpyFrom)
 {
-	this->type = param.type;
+	this->_type = cpyFrom._type;
 	
 	std::cout << "WrongAnimal copy constructor called" << std::endl;
 }
 
-WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &param)
+WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &wrongAnimal)
 {
-	this->type = param.type;
+	this->_type = wrongAnimal._type;
 
 	return (*this);
 }
@@ -43,5 +43,5 @@ void	WrongAnimal::makeSound() const
 
 std::string	WrongAnimal::getType() const
 {
-	return (this->type);
+	return (this->_type);
 }

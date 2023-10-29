@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 08:29:44 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/26 14:14:57 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/28 09:54:28 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ class	Animal
 	
 protected:
 
-	std::string	type;
+	std::string	_type;
 	
 public:
 	
 	Animal();
-	Animal(Animal const &param);
+	Animal(Animal const &cpyFrom);
 	virtual	~Animal();
 	
-	Animal	&operator=(Animal const &param);
+	Animal	&operator=(Animal const &animal);
 
 	virtual void		makeSound() const;
 	std::string			getType() const;

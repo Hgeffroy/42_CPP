@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:14:14 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/26 14:46:59 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/28 09:57:01 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ public:
 	
 	WrongCat();
 	~WrongCat();
-	WrongCat(WrongCat const &param);
+	WrongCat(WrongCat const &cpyFrom);
 	
-	WrongCat	&operator=(WrongCat const &param);
+	WrongCat	&operator=(WrongCat const &wrongCat);
+	
+	void		makeSound() const;
 
 };
 

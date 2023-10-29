@@ -6,35 +6,35 @@
 #    By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/10/28 09:41:01 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/10/29 08:36:34 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #--variables-------------------------------------------------------------------#
 
-NAME            =       zoo
+NAME            =       materiasandothershit
 DEBUG           =       no
 
 #--includes & libraries--------------------------------------------------------#
 
 INC_DIR         =       ./
 
-HEADERS			=		Animal.hpp \
-						Cat.hpp \
-						Brain.hpp \
-						Dog.hpp \
-						WrongAnimal.hpp \
-						WrongCat.hpp
+HEADERS			=		AMateria.hpp \
+						Character.hpp \
+						Cure.hpp \
+						Ice.hpp \
+						ICharacter.hpp \
+						IMateriaSource.hpp \
+						MateriaSource.hpp
 
 #--sources & objects-----------------------------------------------------------#
 
 SOURCES			=		main.cpp \
-						Animal.cpp \
-						Brain.cpp \
-						Cat.cpp \
-						Dog.cpp \
-						WrongAnimal.cpp \
-						WrongCat.cpp
+						AMateria.cpp \
+						Character.cpp \
+						Cure.cpp \
+						Ice.cpp \
+						MateriaSource.cpp
 						
 OBJ_DIR         =       .objs/
 

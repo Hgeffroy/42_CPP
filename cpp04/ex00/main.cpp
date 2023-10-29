@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:16:11 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/26 14:57:12 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/28 10:07:08 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main()
 	delete i;
 	delete j;
 	delete meta;
+	delete wi;
 	
 	return 0;
 }
