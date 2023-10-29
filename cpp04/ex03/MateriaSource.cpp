@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:14:40 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/29 09:12:21 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/29 10:10:31 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 
 MateriaSource::MateriaSource()
 {
+	for (int i = 0; i < 4; i++)
+		this->_sources[i] = NULL;
+		
 	std::cout << "MateriaSource default constructor called" << std::endl;
 }
 
 MateriaSource::~MateriaSource()
 {
+	for (int i = 0; i < 4; i++)
+		delete this->_sources[i];
+	
 	std::cout << "MateriaSource default destructor called" << std::endl;
 }
 
@@ -56,7 +62,6 @@ void		MateriaSource::learnMateria(AMateria* m)
 	}
 	
 	this->_sources[i] = m;
-	// std::cout << "Materia " << m->getType() << " placed at " << i << std::endl;
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type)
@@ -65,7 +70,6 @@ AMateria*	MateriaSource::createMateria(std::string const & type)
 
 	while (i < 4 && this->_sources[i])
 	{
-		// std::cout << i << std::endl;
 		if (this->_sources[i]->getType() == type)
 			break;
 		i++;

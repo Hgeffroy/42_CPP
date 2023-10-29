@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 12:14:51 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/29 08:19:01 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/29 10:10:44 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,25 @@
 
 Character::Character() : _name("Undefined")
 {
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = NULL;
+		
 	std::cout << "Character default constructor called" << std::endl;
 }
 
 Character::~Character()
 {
-	// Delete l'inventaire ?
+	for (int i = 0; i < 4; i++)
+		delete this->_inventory[i];
+	
 	std::cout << "Character default destructor called" << std::endl;
 }
 
 Character::Character(std::string name) : _name(name)
 {
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = NULL;
+		
 	std::cout << "Character parametric constructor called" << std::endl;
 }
 
