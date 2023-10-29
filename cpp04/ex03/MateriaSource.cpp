@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:14:40 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/29 08:24:13 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/29 09:12:21 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,16 @@ void		MateriaSource::learnMateria(AMateria* m)
 	}
 	
 	this->_sources[i] = m;
+	// std::cout << "Materia " << m->getType() << " placed at " << i << std::endl;
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type)
 {
 	int	i = 0;
 
-	while (i < 4)
+	while (i < 4 && this->_sources[i])
 	{
+		// std::cout << i << std::endl;
 		if (this->_sources[i]->getType() == type)
 			break;
 		i++;

@@ -6,7 +6,7 @@
 #    By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/10/29 08:36:34 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/10/29 09:03:08 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,12 +40,12 @@ OBJ_DIR         =       .objs/
 
 #--flags-----------------------------------------------------------------------#
 
-CFLAGS          =       -g3 -Wall -Wextra -Werror -std=c++98 -I $(INC_DIR)
+CFLAGS          =       -Wall -Wextra -Werror -std=c++98 -I $(INC_DIR)
 CPP				=		c++
 
 #--debug flags-----------------------------------------------------------------#
 
-DFLAGS          =       -fsanitize=address
+DFLAGS          =       -fsanitize=address -g3
 
 ifeq ($(DEBUG), yes)
 CFLAGS          +=      $(DFLAGS)

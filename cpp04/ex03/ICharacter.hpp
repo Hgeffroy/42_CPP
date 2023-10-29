@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 11:57:29 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/29 08:29:58 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/29 09:00:02 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ICHARACTER_HPP
 
 # include "AMateria.hpp"
+
+class	AMateria;
 
 class ICharacter
 {

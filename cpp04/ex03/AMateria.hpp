@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 10:24:11 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 13:54:10 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/29 09:00:05 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <string>
 # include <iostream>
 # include "ICharacter.hpp"
+
+class	ICharacter;
 
 class AMateria
 {
@@ -27,7 +29,7 @@ protected:
 public:
 
 	AMateria();
-	~AMateria();
+	virtual	~AMateria();
 	AMateria(AMateria const &cpyFrom);
 	AMateria(std::string const & type);
 	
