@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 13:06:19 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 13:20:13 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/30 14:55:57 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/30 14:56:39 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
-int	main()
+# include "AForm.hpp"
+
+class RobotomyRequestForm : public AForm
 {
-	Bureaucrat	a("Harvey", 1);
-	Bureaucrat	b("Louis", 150);
+private:
 
-	Form		f1("28B", 20, 20);
+	RobotomyRequestForm();
 
-	a.signForm(f1);
-	b.signForm(f1);
-}
+public:
+
+	~RobotomyRequestForm();
+	RobotomyRequestForm(std::string target);
+	RobotomyRequestForm(RobotomyRequestForm const& cpyFrom);
+	
+	RobotomyRequestForm& operator=(RobotomyRequestForm const& rightValue);
+	
+};
+
+#endif

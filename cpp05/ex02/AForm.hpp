@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 09:02:42 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 13:17:53 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 14:29:36 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 private:
 
@@ -26,22 +26,25 @@ private:
 	int	const			_signGrade;
 	int const			_execGrade;
 	
-	Form();
+protected:
+
+	//Faire les setters ici ?
 	
 public:
 
-	~Form();
-	Form(Form const& cpyFrom);
-	Form(std::string name, int signGrade, int execGrade);
+	AForm();
+	virtual ~AForm();
+	AForm(AForm const& cpyFrom);
+	AForm(std::string name, int signGrade, int execGrade);
 
-	Form& operator=(Form const& rightValue);
+	AForm& operator=(AForm const& rightValue);
 
 	std::string	getName() const;
 	bool		getSigned() const;
 	int			getSignGrade() const;
 	int			getExecGrade() const;
 
-	void	beSigned(Bureaucrat b);
+	virtual void	beSigned(Bureaucrat b) = 0;
 
 	class GradeTooHighException : public std::exception
 	{

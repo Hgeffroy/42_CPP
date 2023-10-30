@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 13:06:19 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 13:20:13 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/30 14:56:55 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/30 14:57:36 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
-int	main()
+# include "AForm.hpp"
+
+class ShrubberyCreationForm : public AForm
 {
-	Bureaucrat	a("Harvey", 1);
-	Bureaucrat	b("Louis", 150);
+private:
 
-	Form		f1("28B", 20, 20);
+	ShrubberyCreationForm();
 
-	a.signForm(f1);
-	b.signForm(f1);
-}
+public:
+
+	~ShrubberyCreationForm();
+	ShrubberyCreationForm(std::string target);
+	ShrubberyCreationForm(ShrubberyCreationForm const& cpyFrom);
+	
+	ShrubberyCreationForm& operator=(ShrubberyCreationForm const& rightValue);
+	
+};
+
+#endif
