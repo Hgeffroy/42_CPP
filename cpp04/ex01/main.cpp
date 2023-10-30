@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:16:11 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 10:14:56 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 10:33:12 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@ int	main()
 
 	for (int i = 0; i < N; i++)
 		delete tab[i];
+	
+	Dog	test;
+	{
+		Dog tmp = test;
+		Dog	tmp2;
+		tmp2 = test;
+	}
 	
 	return 0;
 }
