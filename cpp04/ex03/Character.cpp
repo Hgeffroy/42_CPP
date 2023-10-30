@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 12:14:51 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 09:45:08 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 10:30:49 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ Character::Character(std::string name) : _name(name)
 	std::cout << "Character parametric constructor called" << std::endl;
 }
 
-Character::Character(Character const &cpyFrom)
+Character::Character(Character const &cpyFrom) : _name(cpyFrom._name)
 {
-	*this = cpyFrom;
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = cpyFrom._inventory[i]->clone();
 	
 	std::cout << "Character copy contructor called" << std::endl;
 }

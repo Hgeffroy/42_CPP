@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:11:29 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 09:44:17 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 10:29:30 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,22 @@ Cat::Cat()
 	this->_type = "Cat";
 	this->_brain = new Brain();
 	
-	std::cout << "Cat constructor called" << std::endl;
+	std::cout << "Cat default constructor called" << std::endl;
 }
 
 Cat::~Cat()
 {
 	delete this->_brain;
 
-	std::cout << "Cat destructor called" << std::endl;
+	std::cout << "Cat default destructor called" << std::endl;
 }
 
 Cat::Cat(Cat const &cpyFrom)
 {
-	*this = cpyFrom; 
+	this->_type = cpyFrom._type;
+
+	this->_brain = new Brain();
+	*(this->_brain) = *(cpyFrom._brain);
 	
 	std::cout << "Cat copy constructor called" << std::endl;
 }
