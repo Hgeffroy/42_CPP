@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:15:54 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 10:05:27 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:43:12 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Dog::~Dog()
 
 Dog::Dog(Dog const &cpyFrom)
 {
-	this->_type = cpyFrom._type;
+	*this = cpyFrom;
 
 	std::cout << "Dog copy constructor called" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 10:19:12 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 08:11:12 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:09:24 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ private:
 	std::string const	_name;
 	int					_grade;
 	
+	Bureaucrat();
+	
 public:
 
-	Bureaucrat();
 	~Bureaucrat();
 	Bureaucrat(Bureaucrat const& copyFrom);
 	Bureaucrat(std::string name, int grade);

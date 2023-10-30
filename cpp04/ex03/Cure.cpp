@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 08:32:14 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/29 08:33:57 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:45:14 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Cure::~Cure()
 
 Cure::Cure(Cure const &cpyFrom)
 {
-	this->_type = cpyFrom._type;
+	*this = cpyFrom;
 	
 	std::cout << "Cure copy constructor called" << std::endl;
 }

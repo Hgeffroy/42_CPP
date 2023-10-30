@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 12:14:51 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 07:03:41 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:45:08 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,7 @@ Character::Character(std::string name) : _name(name)
 
 Character::Character(Character const &cpyFrom)
 {
-	this->_name = cpyFrom._name;
-	for (int i = 0; i < 4; i++)
-	{
-		delete this->_inventory[i];
-		this->_inventory[i] = cpyFrom._inventory[i]->clone();
-	}
+	*this = cpyFrom;
 	
 	std::cout << "Character copy contructor called" << std::endl;
 }

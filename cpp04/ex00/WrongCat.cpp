@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:13:43 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 09:57:16 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:43:20 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ WrongCat::~WrongCat()
 
 WrongCat::WrongCat(WrongCat const &cpyFrom)
 {
-	this->_type = cpyFrom._type;
+	*this = cpyFrom;
 	
 	std::cout << "WrongCat copy constructor called" << std::endl;
 }

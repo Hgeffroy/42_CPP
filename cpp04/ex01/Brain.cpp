@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 09:24:46 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 09:48:40 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:43:31 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ Brain::Brain()
 
 Brain::Brain(Brain const &cpyFrom)
 {
-	for (int i = 0; i < 100; i++)
-		this->_ideas[i] = cpyFrom._ideas[i];
+	*this = cpyFrom;
 		
 	std::cout << "Brain copy constructor called" << std::endl;
 }

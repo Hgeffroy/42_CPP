@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:14:40 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/29 10:10:31 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:46:26 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,9 @@ MateriaSource::~MateriaSource()
 
 MateriaSource::MateriaSource(MateriaSource const &cpyFrom)
 {
-	for (int i = 0; i < 4; i++)
-	{
-		delete this->_sources[i];
-		this->_sources[i] = cpyFrom._sources[i]->clone();
-	}
+	*this = cpyFrom;
+
+	std::cout << "MateriaSource copy constructor called" << std::endl;
 }
 
 MateriaSource &MateriaSource::operator=(MateriaSource const &materiaSource)

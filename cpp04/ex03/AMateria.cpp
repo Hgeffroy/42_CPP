@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 10:31:33 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/29 08:44:43 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:45:00 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ AMateria::~AMateria()
 
 AMateria::AMateria(AMateria const &cpyFrom)
 {
-	this->_type = cpyFrom._type;
+	*this = cpyFrom;
 
 	std::cout << "AMateria copy constructor called" << std::endl;
 }

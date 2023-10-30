@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:03:52 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 10:20:10 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:44:09 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ AAnimal::~AAnimal()
 
 AAnimal::AAnimal(AAnimal const &cpyFrom)
 {
-	this->_type = cpyFrom._type;
+	*this = cpyFrom;
 	
 	std::cout << "AAnimal copy constructor called" << std::endl;
 }

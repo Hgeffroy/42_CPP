@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 10:55:02 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 09:45:17 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/10/30 09:03:28 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/10/30 09:15:19 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Form.hpp"
 
-Ice::Ice()
+Form::Form() : _name("Undefined"), _signed(false), _signGrade(150), _execGrade(150)
 {
-	this->_type = "ice";
-	std::cout << "Ice default constructor called" << std::endl;
+	std::cout << "Form default constructor called" << std::endl;
 }
 
-Ice::~Ice()
+Form::~Form()
 {
-	std::cout << "Ice default destructor called" << std::endl;
-}
-
-Ice::Ice(Ice const &cpyFrom)
-{
-	*this = cpyFrom;
 	
-	std::cout << "Ice copy constructor called" << std::endl;
 }
 
-Ice	&Ice::operator=(Ice const &ice)
+Form::Form(Form const& cpyFrom)
 {
-	this->_type = ice._type;
-
-	return (*this);
+	
 }
 
-AMateria* Ice::clone() const
+Form::Form(std::string name, int signGrade, int execGrade)
 {
-	return (new Ice(*this));
+	
+}
+
+Form& Form::operator=(Form const& rightValue)
+{
+	
 }

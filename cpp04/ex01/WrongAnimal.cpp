@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:28:06 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 10:00:29 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:44:01 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ WrongAnimal::~WrongAnimal()
 
 WrongAnimal::WrongAnimal(WrongAnimal const &cpyFrom)
 {
-	this->_type = cpyFrom._type;
+	*this = cpyFrom;
 	
 	std::cout << "WrongAnimal copy constructor called" << std::endl;
 }
