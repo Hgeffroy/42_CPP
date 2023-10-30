@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 10:25:06 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/29 13:20:09 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 06:54:25 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 Bureaucrat& Bureaucrat::operator=(Bureaucrat const& rightValue)
 {
 	if (this->_name != rightValue._name)
-	{
-		std::cout << "The name wasn't the same, " << this->_name << " unchanged." << std::endl;
-		return (*this);
-	}
+		std::cout << "Warning: Both instances don't have the same name, only the grade has changed." << std::endl;
 	this->_grade = rightValue._grade;
 
 	return (*this);

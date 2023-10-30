@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 12:14:51 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/29 10:10:44 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 07:03:41 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,11 @@ void	Character::unequip(int idx)
 
 void	Character::use(int idx, ICharacter& target)
 {
+	if (!this->_inventory[idx])
+	{
+		std::cout << "No materia equipped here." << std::endl;
+		return ;
+	}
 	this->_inventory[idx]->use(target);
 	delete this->_inventory[idx];
 	this->_inventory[idx] = NULL;

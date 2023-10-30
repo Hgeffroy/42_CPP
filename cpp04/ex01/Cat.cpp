@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:11:29 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/28 09:58:47 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/30 07:25:33 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ Cat::~Cat()
 Cat::Cat(Cat const &cpyFrom)
 {
 	this->_type = cpyFrom._type;
-	this->_brain = cpyFrom._brain;
+	
+	delete this->_brain;
+	this->_brain = new Brain();
+	*(this->_brain) = *(cpyFrom._brain); 
 	
 	std::cout << "Cat copy constructor called" << std::endl;
 }
@@ -38,7 +41,10 @@ Cat::Cat(Cat const &cpyFrom)
 Cat	&Cat::operator=(Cat const &cat)
 {
 	this->_type = cat._type;
-	this->_brain = cat._brain;
+	
+	delete this->_brain;
+	this->_brain = new Brain();
+	*(this->_brain) = *(cat._brain); 
 
 	return (*this);
 }
