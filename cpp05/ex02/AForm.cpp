@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 09:03:28 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 13:27:15 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 08:38:09 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,14 @@ int	AForm::getSignGrade() const
 int	AForm::getExecGrade() const
 {
 	return (this->_execGrade);
+}
+
+void	AForm::setSigned()
+{
+	this->_signed = true;
+}
+
+void	AForm::execute(Bureaucrat const& executor) const
+{
+	// A faire !!
 }

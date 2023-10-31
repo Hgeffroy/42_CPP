@@ -6,22 +6,26 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:58:26 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 14:58:51 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 08:40:37 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm::ShrubberyCreationForm()
+ShrubberyCreationForm::ShrubberyCreationForm::ShrubberyCreationForm() :
+						AForm("ShrubberyCreationForm", 145, 137), _target("Undefined")
 {
-	// Faire des setters ?
-	
 	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	std::cout << "ShrubberyCreationForm default destructor called" << std::endl;
+}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
+						AForm("ShrubberyCreationForm", 145, 137), _target(target)
+{
+	std::cout << "ShrubberyCreationForm parametric constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& cpyFrom)
@@ -33,7 +37,13 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& cpyFro
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const& rightValue)
 {
-	
-	
 	return (*this);
+}
+
+void	ShrubberyCreationForm::beSigned(Bureaucrat b)
+{
+	if (b.getGrade() <= this->getSignGrade())
+		this->setSigned();
+	else
+		throw ShrubberyCreationForm::GradeTooLowException();
 }

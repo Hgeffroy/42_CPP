@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 09:03:28 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 13:20:20 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 08:38:05 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void	Form::beSigned(Bureaucrat b)
 		this->_signed = true;
 	else
 		throw Form::GradeTooLowException();
-	
 }
 
 

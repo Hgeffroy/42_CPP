@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:12:17 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 14:55:51 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 08:30:59 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 
 class PresidentialPardonForm : public AForm
 {
+	
 private:
 
 	PresidentialPardonForm();
+	std::string const	_target;
 
 public:
 
@@ -28,6 +30,8 @@ public:
 	PresidentialPardonForm(PresidentialPardonForm const& cpyFrom);
 	
 	PresidentialPardonForm& operator=(PresidentialPardonForm const& rightValue);
+
+	void	beSigned(Bureaucrat b);
 	
 };
 

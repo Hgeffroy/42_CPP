@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:03:52 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 09:44:09 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 12:22:50 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,6 @@ AAnimal	&AAnimal::operator=(AAnimal const &animal)
 	this->_type = animal._type;
 
 	return (*this);
-}
-
-void	AAnimal::makeSound() const
-{
-	std::cout << "Random animal sound" << std::endl;
 }
 
 std::string	AAnimal::getType() const

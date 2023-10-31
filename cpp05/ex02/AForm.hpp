@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 09:02:42 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 14:29:36 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 08:35:45 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,13 @@ class Bureaucrat;
 
 class AForm
 {
+	
 private:
 
 	std::string const	_name;
 	bool				_signed;
 	int	const			_signGrade;
 	int const			_execGrade;
-	
-protected:
-
-	//Faire les setters ici ?
 	
 public:
 
@@ -43,8 +40,10 @@ public:
 	bool		getSigned() const;
 	int			getSignGrade() const;
 	int			getExecGrade() const;
+	void		setSigned();
 
 	virtual void	beSigned(Bureaucrat b) = 0;
+	void			execute(Bureaucrat const& executor) const;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -63,6 +62,7 @@ public:
 			return ("his grade is too low\n");
 		}
 	};
+	
 };
 
 #endif

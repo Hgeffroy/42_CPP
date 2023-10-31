@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:55:57 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 14:56:39 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 08:39:54 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class RobotomyRequestForm : public AForm
 private:
 
 	RobotomyRequestForm();
+	std::string const	_target;
 
 public:
 
@@ -28,6 +29,8 @@ public:
 	RobotomyRequestForm(RobotomyRequestForm const& cpyFrom);
 	
 	RobotomyRequestForm& operator=(RobotomyRequestForm const& rightValue);
+	
+	void	beSigned(Bureaucrat b);
 	
 };
 
