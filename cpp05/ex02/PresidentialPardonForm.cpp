@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:11:49 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/31 08:38:42 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:13:52 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& cpy
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm const& rightValue)
 {
+	(void)rightValue;
+
 	return (*this);
 }
 
@@ -48,3 +50,17 @@ void	PresidentialPardonForm::beSigned(Bureaucrat b)
 	else
 		throw PresidentialPardonForm::GradeTooLowException();
 }
+
+void	PresidentialPardonForm::execute(Bureaucrat const& executor) const
+{
+	try
+	{	
+		AForm::execute(executor);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	// Faire les trucs
+}
+

@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:57:57 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/31 08:39:28 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:14:54 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& cpyFrom)
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const& rightValue)
 {
+	(void)rightValue;
+	
 	return (*this);
 }
 
@@ -47,4 +49,17 @@ void	RobotomyRequestForm::beSigned(Bureaucrat b)
 		this->setSigned();
 	else
 		throw RobotomyRequestForm::GradeTooLowException();
+}
+
+void	RobotomyRequestForm::execute(Bureaucrat const& executor) const
+{
+	try
+	{	
+		AForm::execute(executor);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	// Faire les trucs
 }

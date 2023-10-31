@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:12:17 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/31 08:30:59 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:08:10 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ public:
 	PresidentialPardonForm& operator=(PresidentialPardonForm const& rightValue);
 
 	void	beSigned(Bureaucrat b);
+	void	execute(Bureaucrat const& executor) const;
 	
 };
 

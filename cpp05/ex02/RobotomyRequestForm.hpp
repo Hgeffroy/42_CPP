@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:55:57 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/31 08:39:54 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:08:19 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ public:
 	RobotomyRequestForm& operator=(RobotomyRequestForm const& rightValue);
 	
 	void	beSigned(Bureaucrat b);
+	void	execute(Bureaucrat const& executor) const;
+
 	
 };
 

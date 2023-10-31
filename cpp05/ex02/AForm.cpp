@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 09:03:28 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/31 08:38:09 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:07:35 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ void	AForm::setSigned()
 
 void	AForm::execute(Bureaucrat const& executor) const
 {
-	// A faire !!
+	if (!(this->_signed && executor.getGrade() <= this->_execGrade))
+		throw AForm::GradeTooLowException();
 }

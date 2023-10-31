@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 10:19:12 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 13:22:21 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 12:45:09 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ public:
 	Bureaucrat& operator--();
 
 	std::string	getName();
-	int			getGrade();
+	int			getGrade() const;
 
 	void	signForm(AForm &f);
 

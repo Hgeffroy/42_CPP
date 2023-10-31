@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 09:02:42 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/31 08:35:45 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:02:02 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ public:
 	void		setSigned();
 
 	virtual void	beSigned(Bureaucrat b) = 0;
-	void			execute(Bureaucrat const& executor) const;
+	virtual void	execute(Bureaucrat const& executor) const;
 
 	class GradeTooHighException : public std::exception
 	{

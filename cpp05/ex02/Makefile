@@ -6,7 +6,7 @@
 #    By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/10/30 08:57:56 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/10/31 12:41:47 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,19 @@ DEBUG           =       no
 INC_DIR         =       ./
 
 HEADERS			=		Bureaucrat.hpp \
-						Form.hpp
+						AForm.hpp \
+						PresidentialPardonForm.hpp \
+						RobotomyRequestForm.hpp \
+						ShrubberyCreationForm.hpp
 
 #--sources & objects-----------------------------------------------------------#
 
 SOURCES			=		main.cpp \
 						Bureaucrat.cpp \
-						Form.cpp
+						AForm.cpp \
+						PresidentialPardonForm.cpp \
+						RobotomyRequestForm.cpp \
+						ShrubberyCreationForm.cpp
 						
 OBJ_DIR         =       .objs/
 
