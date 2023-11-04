@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 10:19:12 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 13:17:17 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/01 10:12:18 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ public:
 	Bureaucrat(std::string name, int grade);
 
 	Bureaucrat& operator=(Bureaucrat const& rightValue);
-	Bureaucrat& operator++();
+	Bureaucrat& operator++() const;
 	Bureaucrat& operator--();
 
-	std::string	getName();
-	int			getGrade();
+	std::string	getName() const;
+	int			getGrade() const;
 
 	void	signForm(Form &f);
 
@@ -62,9 +62,8 @@ public:
 			return ("Bureaucrat grade is too low");
 		}
 	};
-	
-	friend std::ostream& operator<<(std::ostream& os, Bureaucrat const& rightValue);
-	
 };
+
+std::ostream& operator<<(std::ostream& os, Bureaucrat const& rightValue);
 
 #endif

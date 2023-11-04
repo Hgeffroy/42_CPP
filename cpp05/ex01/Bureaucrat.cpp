@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 10:25:06 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 13:17:11 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/01 10:12:11 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat const& rightValue)
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat const& rightValue)
 {
-	os << rightValue._name << ", bureaucrat grade " << rightValue._grade << ".";
+	os << rightValue.getName() << ", bureaucrat grade " << rightValue.getGrade() << ".";
 	
 	return (os);
 }
@@ -73,12 +73,12 @@ Bureaucrat& Bureaucrat::operator--()
 	return (*this);
 }
 	
-std::string	Bureaucrat::getName()
+std::string	Bureaucrat::getName() const
 {
 	return (this->_name);
 }
 
-int	Bureaucrat::getGrade()
+int	Bureaucrat::getGrade() const
 {
 	return (this->_grade);
 }

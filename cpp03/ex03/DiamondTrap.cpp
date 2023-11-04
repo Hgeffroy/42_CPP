@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 13:00:59 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/26 16:35:06 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/04 13:12:06 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 DiamondTrap::DiamondTrap() : name("DiamondTrap")
 {
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
+	ClapTrap::name = name + "_clap_name";
+	this->hitPoints = FragTrap::getHitPoints();
+	this->energyPoints = ScavTrap::getEnergyPoints();
+	this->attackDamage = FragTrap::getAttackDamage();
 	std::cout << "Final Default constructor called" << std::endl;
 }
 
@@ -24,9 +25,13 @@ DiamondTrap::DiamondTrap(std::string name)
 {
 	this->name = name;
 	ClapTrap::name = name + "_clap_name";
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
+	this->hitPoints = FragTrap::getHitPoints();
+	this->energyPoints = ScavTrap::getEnergyPoints();
+	this->attackDamage = FragTrap::getAttackDamage();
+	
+	std::cout << "Diamondtrap was created with " << this->hitPoints << " hit points." << std::endl;
+	std::cout << "Diamondtrap was created with " << this->energyPoints << " energy points." << std::endl;
+	std::cout << "Diamondtrap was created with " << this->attackDamage << " attack damage." << std::endl;
 	std::cout << "Final Parametric constructor called" << std::endl;
 }
 

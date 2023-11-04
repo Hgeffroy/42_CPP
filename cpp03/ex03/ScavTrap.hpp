@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:46:41 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/26 10:21:57 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/04 13:23:33 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,13 @@
 
 class ScavTrap : public virtual ClapTrap
 {
-	
+
+private:
+
+	static int	maxHitPoints;
+	static int	maxEnergyPoints;
+	static int	maxAttackDamage;
+
 protected:
 	
 	ScavTrap();
@@ -31,7 +37,10 @@ public:
 
 	void			guardGate();
 	virtual void	attack(const std::string &target);
-		
+	
+	int	getHitPoints() const;
+	int	getEnergyPoints() const;
+	int	getAttackDamage() const;
 };
 
 #endif
