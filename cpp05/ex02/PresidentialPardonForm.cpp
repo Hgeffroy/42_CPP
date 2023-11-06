@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:11:49 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/31 13:13:52 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/06 15:41:40 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ void	PresidentialPardonForm::execute(Bureaucrat const& executor) const
 	{
 		std::cerr << e.what() << '\n';
 	}
-	// Faire les trucs
+	std::cout << this->_target << "has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
 
