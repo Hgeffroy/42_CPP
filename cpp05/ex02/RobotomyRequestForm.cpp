@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:57:57 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/06 15:40:24 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:00:45 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void	RobotomyRequestForm::execute(Bureaucrat const& executor) const
 	}
 	
 	std::cout << "*Drilling noises*" << std::endl;
-	srand(time(NULL));
-	int	i = rand() % 2;
+	std::srand(time(NULL));
+	int	i = std::rand() % 2;
 	if (i)
 		std::cout << this->_target << " has been successfully robotomized." << std::endl;
 	else

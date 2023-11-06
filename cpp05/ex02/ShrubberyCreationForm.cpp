@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:58:26 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/31 13:15:12 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:02:49 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,22 @@ void	ShrubberyCreationForm::execute(Bureaucrat const& executor) const
 	{
 		std::cerr << e.what() << '\n';
 	}
-	// Faire les trucs
+
+	std::string	filename = this->_target + "_shrubbery";
+	std::ofstream	ofs(filename.c_str(), std::ofstream::out);
+	
+	ofs << "	              v .   ._, |_  .," << std::endl;
+	ofs << "           `-._\\/  .  \\ /    |/_" << std::endl;
+	ofs << "               \\  _\\, y | \\//" << std::endl;
+	ofs << "         _\\_.___\\, \\/ -.\\||" << std::endl;
+	ofs << "           `7-,--.`._||  / / ," << std::endl;
+	ofs << "           /'     `-. `./ / |/_.'" << std::endl;
+	ofs << "                     |    |//" << std::endl;
+	ofs << "                     |_    /" << std::endl;
+	ofs << "                     |-   |" << std::endl;
+	ofs << "                     |   =|" << std::endl;
+	ofs << "                     |    |" << std::endl;
+	ofs << "--------------------/ ,  . \\--------._" << std::endl;
+
+	ofs.close();
 }
