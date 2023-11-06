@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:51:11 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/06 09:46:50 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/06 10:33:09 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class FragTrap : public virtual ClapTrap
 	
 private:
 
-	// static int	maxHitPoints;
-	// static int	maxEnergyPoints;
-	// static int	maxAttackDamage;
+	static int	maxHitPoints;
+	static int	maxEnergyPoints;
+	static int	maxAttackDamage;
 	
 protected:
 
@@ -36,9 +36,9 @@ public:
 	FragTrap	&operator=(FragTrap const &param);
 
 	void	highFivesGuys();
-	// int		getHitPoints() const;
-	// int		getEnergyPoints() const;
-	// int		getAttackDamage() const;
+	int		getHitPoints() const;
+	int		getEnergyPoints() const;
+	int		getAttackDamage() const;
 	
 };
 
