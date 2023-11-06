@@ -6,24 +6,24 @@
 /*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:03:22 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/04 13:27:40 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/06 09:39:10 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-int	ScavTrap::maxHitPoints;
-int	ScavTrap::maxEnergyPoints;
-int	ScavTrap::maxAttackDamage;
+// int	ScavTrap::maxHitPoints;
+// int	ScavTrap::maxEnergyPoints;
+// int	ScavTrap::maxAttackDamage;
 
 ScavTrap::ScavTrap()
 {
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
-	this->maxHitPoints = 100;
-	this->maxEnergyPoints = 50;
-	this->maxAttackDamage = 20;
+	// this->maxHitPoints = 100;
+	// this->maxEnergyPoints = 50;
+	// this->maxAttackDamage = 20;
 	std::cout << "A different default constructor called" << std::endl;
 }
 
@@ -32,9 +32,9 @@ ScavTrap::ScavTrap(std::string param)
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
-	this->maxHitPoints = 100;
-	this->maxEnergyPoints = 50;
-	this->maxAttackDamage = 20;
+	// this->maxHitPoints = 100;
+	// this->maxEnergyPoints = 50;
+	// this->maxAttackDamage = 20;
 	this->name = param;
 	std::cout << "A different parametric constructor called" << std::endl;
 }
@@ -70,17 +70,17 @@ void	ScavTrap::attack(const std::string &target)
 	this->energyPoints--;
 }
 
-int	ScavTrap::getHitPoints() const
-{
-	return (this->maxHitPoints);
-}
+// int	ScavTrap::getHitPoints() const
+// {
+// 	return (this->maxHitPoints);
+// }
 
-int	ScavTrap::getEnergyPoints() const
-{
-	return (this->maxEnergyPoints);
-}
+// int	ScavTrap::getEnergyPoints() const
+// {
+// 	return (this->maxEnergyPoints);
+// }
 
-int	ScavTrap::getAttackDamage() const
-{
-	return (this->maxAttackDamage);
-}
+// int	ScavTrap::getAttackDamage() const
+// {
+// 	return (this->maxAttackDamage);
+// }

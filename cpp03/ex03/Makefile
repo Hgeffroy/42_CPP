@@ -6,7 +6,7 @@
 #    By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/10/25 10:02:05 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/11/06 09:42:07 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ OBJ_DIR         =       .objs/
 
 #--flags-----------------------------------------------------------------------#
 
-CFLAGS          =       -g3 -Wall -Wextra -Werror -std=c++98 -I $(INC_DIR)
+CFLAGS          =       -g3 -Wall -Wextra -Werror -Wno-shadow -std=c++98 -I $(INC_DIR)
 CPP				=		c++
 
 #--debug flags-----------------------------------------------------------------#
