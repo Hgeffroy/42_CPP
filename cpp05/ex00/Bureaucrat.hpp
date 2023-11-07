@@ -44,7 +44,7 @@ public:
 	public:
 		virtual const char*	what() const throw()
 		{
-			return ("Grade is too high\n");
+			return ("grade is too high\n");
 		}
 	};
 
@@ -53,7 +53,7 @@ public:
 	public:
 		virtual const char*	what() const throw()
 		{
-			return ("Grade is too low\n");
+			return ("grade is too low\n");
 		}
 	};
 };

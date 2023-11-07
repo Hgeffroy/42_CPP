@@ -37,7 +37,7 @@ public:
 	Bureaucrat(std::string name, int grade);
 
 	Bureaucrat& operator=(Bureaucrat const& rightValue);
-	Bureaucrat& operator++() const;
+	Bureaucrat& operator++();
 	Bureaucrat& operator--();
 
 	std::string	getName() const;

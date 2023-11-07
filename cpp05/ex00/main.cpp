@@ -15,13 +15,24 @@
 int	main()
 {
 	Bureaucrat	a("Lucas", 1);
-		
+
+    try
+    {
+        Bureaucrat  b("Arthur", 151);
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << "Couldn't create bureaucrat b because ";
+        std::cerr << e.what();
+    }
+
 	try
 	{
 		++a;
 	}
 	catch(const std::exception& e)
 	{
+        std::cout << "Couldn't increment bureaucrat a because ";
 		std::cerr << e.what();
 	}
 	

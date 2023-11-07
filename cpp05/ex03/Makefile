@@ -23,7 +23,8 @@ HEADERS			=		Bureaucrat.hpp \
 						AForm.hpp \
 						PresidentialPardonForm.hpp \
 						RobotomyRequestForm.hpp \
-						ShrubberyCreationForm.hpp
+						ShrubberyCreationForm.hpp \
+						Intern.hpp
 
 #--sources & objects-----------------------------------------------------------#
 
@@ -32,7 +33,8 @@ SOURCES			=		main.cpp \
 						AForm.cpp \
 						PresidentialPardonForm.cpp \
 						RobotomyRequestForm.cpp \
-						ShrubberyCreationForm.cpp
+						ShrubberyCreationForm.cpp \
+						Intern.cpp
 						
 OBJ_DIR         =       .objs/
 
