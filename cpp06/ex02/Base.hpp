@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:40:10 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/08 12:40:10 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/08 12:45:48 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/09 08:18:39 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-# define INTERN_HPP
+#ifndef BASE_HPP
+# define BASE_HPP
 
-# include "AForm.hpp"
-# include "PresidentialPardonForm.hpp"
-# include "RobotomyRequestForm.hpp"
-# include "ShrubberyCreationForm.hpp"
+# include <iostream>
+# include <time.h>
+# include <cstdlib>
+# include <typeinfo>
 
-class   Intern
+class	Base
 {
 
 public:
-    Intern();
-    ~Intern();
-    Intern(Intern const& cpyFrom);
 
-    Intern& operator=(Intern const& rightValue);
-
-    AForm*    makeForm(std::string form, std::string target);
+	virtual ~Base() {};
 
 };
+
+class	A : public Base {};
+class	B : public Base {};
+class	C : public Base {};
+
+Base*	generate();
+void	identify(Base* p);
+void	identify(Base& p);
 
 #endif

@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:40:10 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/08 12:40:10 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/09 12:44:23 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/09 12:56:18 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-# define INTERN_HPP
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
-# include "AForm.hpp"
-# include "PresidentialPardonForm.hpp"
-# include "RobotomyRequestForm.hpp"
-# include "ShrubberyCreationForm.hpp"
+# include <iostream>
+# include <string>
 
-class   Intern
+template <typename T>
+void	swap(T& a, T& b)
 {
+	T	tmp = a;
+	a = b;
+	b = tmp;
+}
 
-public:
-    Intern();
-    ~Intern();
-    Intern(Intern const& cpyFrom);
+template <typename T>
+T const&	min(T& a, T& b)
+{
+	return (a <= b ? a : b);
+}
 
-    Intern& operator=(Intern const& rightValue);
-
-    AForm*    makeForm(std::string form, std::string target);
-
-};
+template <typename T>
+T const&	max(T& a, T& b)
+{
+	return (a >= b ? a : b);
+}
 
 #endif

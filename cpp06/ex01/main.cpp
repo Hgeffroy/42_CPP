@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:40:10 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/08 12:40:10 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/08 12:19:53 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/08 12:42:51 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-# define INTERN_HPP
+#include "Serializer.hpp"
 
-# include "AForm.hpp"
-# include "PresidentialPardonForm.hpp"
-# include "RobotomyRequestForm.hpp"
-# include "ShrubberyCreationForm.hpp"
-
-class   Intern
+int	main()
 {
+	struct Data	*d = new(Data);
 
-public:
-    Intern();
-    ~Intern();
-    Intern(Intern const& cpyFrom);
+	std::cout << d << std::endl;
+	d = Serializer::deserialize(Serializer::serialize(d));
+	std::cout << d << std::endl;
 
-    Intern& operator=(Intern const& rightValue);
-
-    AForm*    makeForm(std::string form, std::string target);
-
-};
-
-#endif
+	delete d;
+}

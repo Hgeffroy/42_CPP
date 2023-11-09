@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:40:10 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/08 12:40:10 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/09 13:15:45 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/09 14:48:46 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-# define INTERN_HPP
+#include "iter.hpp"
 
-# include "AForm.hpp"
-# include "PresidentialPardonForm.hpp"
-# include "RobotomyRequestForm.hpp"
-# include "ShrubberyCreationForm.hpp"
-
-class   Intern
+int	main()
 {
+	int	array[10];
+	for (int i = 0; i < 10; i++)
+		array[i] = 0;
 
-public:
-    Intern();
-    ~Intern();
-    Intern(Intern const& cpyFrom);
-
-    Intern& operator=(Intern const& rightValue);
-
-    AForm*    makeForm(std::string form, std::string target);
-
-};
-
-#endif
+	iter(array, 10, &increment);
+}

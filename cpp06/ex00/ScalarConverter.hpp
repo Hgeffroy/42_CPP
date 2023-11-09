@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:40:10 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/08 12:40:10 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/08 12:39:51 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/08 12:39:51 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-# define INTERN_HPP
+#ifndef SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
 
-# include "AForm.hpp"
-# include "PresidentialPardonForm.hpp"
-# include "RobotomyRequestForm.hpp"
-# include "ShrubberyCreationForm.hpp"
+# include <iostream>
+# include <string>
+# include <cstdlib>
+# include <cmath>
 
-class   Intern
+class	ScalarConverter
 {
 
+private:
+
+	static char		_c;
+	static int		_i;
+	static float	_f;
+	static double	_d;
+
 public:
-    Intern();
-    ~Intern();
-    Intern(Intern const& cpyFrom);
 
-    Intern& operator=(Intern const& rightValue);
-
-    AForm*    makeForm(std::string form, std::string target);
+	static void	convert(std::string toConvert);
+	static void	print();
 
 };
 

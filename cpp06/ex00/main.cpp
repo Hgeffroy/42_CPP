@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:40:10 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/08 12:40:10 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/08 12:39:44 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/08 12:39:44 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-# define INTERN_HPP
+#include "ScalarConverter.hpp"
 
-# include "AForm.hpp"
-# include "PresidentialPardonForm.hpp"
-# include "RobotomyRequestForm.hpp"
-# include "ShrubberyCreationForm.hpp"
-
-class   Intern
+int main(int ac, char **av)
 {
+	if (ac != 2)
+	{
+		std::cout << "The program needs exactly one argument to run" << std::endl;
+		return (1);
+	}
 
-public:
-    Intern();
-    ~Intern();
-    Intern(Intern const& cpyFrom);
-
-    Intern& operator=(Intern const& rightValue);
-
-    AForm*    makeForm(std::string form, std::string target);
-
-};
-
-#endif
+	std::string	s = av[1];
+	ScalarConverter::convert(s);
+	ScalarConverter::print();
+}

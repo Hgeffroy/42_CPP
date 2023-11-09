@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:40:10 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/08 12:40:10 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/09 13:01:45 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/09 15:49:53 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-# define INTERN_HPP
+#ifndef ITER_HPP
+# define ITER_HPP
 
-# include "AForm.hpp"
-# include "PresidentialPardonForm.hpp"
-# include "RobotomyRequestForm.hpp"
-# include "ShrubberyCreationForm.hpp"
+# include <iostream>
 
-class   Intern
+// On va considerer que T est le pointeur !
+template <typename T>
+void	iter(T ptr, size_t len, (*f)(*T))
 {
+	for (size_t i = 0; i < len; i++)
+		f(T[i]);
+}
 
-public:
-    Intern();
-    ~Intern();
-    Intern(Intern const& cpyFrom);
-
-    Intern& operator=(Intern const& rightValue);
-
-    AForm*    makeForm(std::string form, std::string target);
-
-};
+int&	increment(int& a)
+{
+	return (a++);
+}
 
 #endif
