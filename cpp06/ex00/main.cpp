@@ -24,3 +24,5 @@ int main(int ac, char **av)
 	ScalarConverter::convert(s);
 	ScalarConverter::print();
 }
+
+// Check les inf !!

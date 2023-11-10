@@ -1,35 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 13:15:45 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/10 09:29:51 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/10 09:41:20 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/10 12:44:05 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
-#include <ctype.h>
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
-int	main()
+# include <iostream>
+# include <stdexcept>
+
+template <typename T>
+class Array
 {
-	int	array[10];
-	for (int i = 0; i < 10; i++)
-		array[i] = 0;
 
-	iter(array, 10, &increment);
+private:
 
-	for (int i = 0; i < 10; i++)
-		std::cout << "array[" << i << "] = " << array[i] << std::endl;
+	T*					_array;
+	unsigned int const	_size;
 
-	/**/
+	Array( void );
 
-	char arraychar[] = "Youplaboom";
+public:
 
-	iter(arraychar, 10, &ft_toupper);
+	Array( Array const & toCopy );
+	~Array( void );
+	Array( unsigned int n );
 
-	for (int i = 0; i < 10; i++)
-		std::cout << "array[" << i << "] = " << arraychar[i] << std::endl;
-}
+	Array&	operator=( Array const & toAssign );
+	T&		operator[]( unsigned int n );
+
+};
+
+# include "Array.tpp"
+
+#endif
