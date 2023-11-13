@@ -12,18 +12,19 @@
 
 #--variables-------------------------------------------------------------------#
 
-NAME            =       easyfind
+NAME            =       span
 DEBUG           =       no
 
 #--includes & libraries--------------------------------------------------------#
 
 INC_DIR         =       ./
 
-HEADERS			=		easyfind.hpp
+HEADERS			=		Span.hpp
 
 #--sources & objects-----------------------------------------------------------#
 
 SOURCES			=		main.cpp \
+						Span.cpp
 
 OBJ_DIR         =       .objs/
 

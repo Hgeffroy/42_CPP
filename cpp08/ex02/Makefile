@@ -12,14 +12,14 @@
 
 #--variables-------------------------------------------------------------------#
 
-NAME            =       easyfind
+NAME            =       mutant
 DEBUG           =       no
 
 #--includes & libraries--------------------------------------------------------#
 
 INC_DIR         =       ./
 
-HEADERS			=		easyfind.hpp
+HEADERS			=		MutantStack.hpp
 
 #--sources & objects-----------------------------------------------------------#
 
