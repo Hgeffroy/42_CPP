@@ -30,6 +30,15 @@ public:
 
     AForm*    makeForm(std::string form, std::string target);
 
+	class InvalidFormException : public std::exception
+	{
+	public:
+		virtual const char*	what() const throw()
+		{
+			return ("Invalid form name.");
+		}
+	};
+
 };
 
 #endif

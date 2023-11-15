@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:41:20 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/10 12:44:05 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:26:46 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,14 @@ public:
 
 	Array&	operator=( Array const & toAssign );
 	T&		operator[]( unsigned int n );
+
+	class OutOfBoundException : public std::exception
+	{
+		virtual const char*	what() const throw()
+		{
+			return ("Out of bound\n");
+		}
+	};
 
 };
 

@@ -64,8 +64,7 @@ AForm*    Intern::makeForm(std::string form, std::string target)
             f = new ShrubberyCreationForm(target);
             break ;
         default:
-            f = NULL;
-            std::cout << "This form doesn't exist." << std::endl;
+			throw InvalidFormException();
     }
     return (f);
 }

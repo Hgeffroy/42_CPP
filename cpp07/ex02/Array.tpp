@@ -36,8 +36,6 @@ template <typename T>
 Array<T>::Array( unsigned int n ) : _size(n)
 {
 	this->_array = new T[n];
-	for (unsigned int i = 0; i < n; i++)
-		this->_array[i] = 0;
 }
 
 template <typename T>
@@ -54,7 +52,7 @@ template <typename T>
 T&	Array<T>::operator[]( unsigned int n )
 {
 	if (n >= this->_size)
-		throw std::exception();
+		throw Array<T>::OutOfBoundException();
 	return (this->_array[n]);
 }
 

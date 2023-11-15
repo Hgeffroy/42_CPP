@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:39:51 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/08 12:39:51 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/15 07:06:57 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/15 08:37:01 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
+#ifndef BITCOINEXCHANGE_HPP
+# define BITCOINEXCHANGE_HPP
 
 # include <iostream>
-# include <string>
 # include <cstdlib>
-# include <cmath>
+# include <fstream>
+# include <string>
+# include <stdexcept>
+# include <map>
 
-class	ScalarConverter
-{
-
-private:
-
-	static char		_c;
-	static int		_i;
-	static float	_f;
-	static double	_d;
-
-	// Constructeur et tout ici
-
-public:
-
-	static void	convert(std::string toConvert);
-	static void	print();
-
-};
+void	fillMap(std::map<int, float> data);
 
 #endif
