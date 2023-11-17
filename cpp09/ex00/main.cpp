@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 07:42:53 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/16 10:13:48 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 13:09:50 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,26 @@ int	main(int ac, char **av)
 
 	std::ifstream	infile(av[1], std::ios::in);
 	std::string		line;
-	std::getline(infile, line);
+	std::getline(infile, line); // A proteger
 	while (std::getline(infile, line))
 	{
 		int 	date;
 		float	value;
 		std::map<int, float>::iterator	it;
 
-		lineManager(date, value, line, "|");
-		it = data.upper_bound(date);
-		if (it != data.begin())
-			it--;
-		printRes(date, value, it->second);
+		try
+		{
+			lineManager(date, value, line, "|");
+			if (value < 0 || value > 1000)
+				throw InvalidValueException();
+			it = data.lower_bound(date);
+			if (it != data.begin() && it->first != date && it->first < date)
+				it--;
+			printRes(date, value, it->second);
+		}
+		catch(std::exception &e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
 	}
 }

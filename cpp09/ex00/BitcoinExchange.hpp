@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 07:06:57 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/17 09:15:38 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:34:02 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,16 @@
 void	fillMap(std::map<int, float>& data);
 void	lineManager(int& date, float& value, std::string line, std::string separator);
 
-class	InvalidDateException : std::exception
+class	InvalidDateException : public std::exception
 {
 public:
-	virtual const char*	what() const throw()
-	{
-		return ("Invalid date.\n");
-	}
+	virtual const char*	what() const throw();
 };
 
-class	InvalidValueException : std::exception
+class	InvalidValueException : public std::exception
 {
 public:
-	virtual const char*	what() const throw()
-	{
-		return ("Invalid value.\n");
-	}
+	virtual const char*	what() const throw();
 };
 
 #endif

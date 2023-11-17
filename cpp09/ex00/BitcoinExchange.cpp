@@ -6,11 +6,21 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 07:08:09 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/16 09:24:12 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 13:31:11 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+
+const char*	InvalidDateException::what() const throw()
+{
+	return ("Invalid date.");
+}
+
+const char*	InvalidValueException::what() const throw()
+{
+	return ("Invalid value.");
+}
 
 void	printData(std::map<int, float> data)
 {
@@ -19,6 +29,24 @@ void	printData(std::map<int, float> data)
 
 	for (it = data.begin(); it != ite; it++)
 		std::cout << it->first  << " : " << data[it->first] << std::endl;
+}
+
+bool	isValidDate(int d, int m, int y)
+{
+	if (y > 10000)
+		return false;
+
+	if (m < 1 || m > 12)
+		return false;
+
+	if (d > 31 || d < 1)
+		return false;
+	if (d > 30 && ((m < 7 && m % 2 == 0) || (m > 7 && m % 2 == 1)))
+		return false;
+	if ((m == 2 && d > 29) || (m == 2 && (d > 28 && !((y % 4 == 0 && y % 100 != 0) || y % 400 == 0))))
+		return false;
+
+	return true;
 }
 
 int	convertDate(std::string datestr)
@@ -32,14 +60,11 @@ int	convertDate(std::string datestr)
 
 	dash1 = datestr.find(separator, 0);
 	y = std::atoi(datestr.substr(0, dash1).c_str());
-//	std::cout << "y = " << y << " ; ";
 	dash2 = datestr.find(separator, dash1 + 1);
 	m = std::atoi(datestr.substr(dash1 + 1, dash2).c_str());
-//	std::cout << "m = " << m << " ; ";
 	d = std::atoi(datestr.substr(dash2 + 1, datestr.length()).c_str());
-//	std::cout << "d = " << d << " ; ";
 
-	if (m > 12 || m < 1 || d > 31 || d < 1 || y < 1)
+	if (!isValidDate(d, m, y))
 		throw InvalidDateException();
 
 	return ((y << 9) + (m << 5) + d);
@@ -54,14 +79,9 @@ void	lineManager(int& date, float& value, std::string line, std::string separato
 	comma = line.find(separator, 0);
 	datestr = line.substr(0, comma);
 	valuestr = line.substr(comma + 1, line.length());
-	try
-	{
-		date = convertDate(datestr);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+
+	date = convertDate(datestr);
+
 	value = static_cast<float>(std::atof(valuestr.c_str()));
 }
 
@@ -79,6 +99,6 @@ void	fillMap(std::map<int, float>& data)
 		lineManager(date, value, line, ",");
 		data[date] = value;
 	}
-	printData(data);
+//	printData(data);
 }
 
