@@ -42,7 +42,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const& r
 	return (*this);
 }
 
-void	RobotomyRequestForm::beSigned(Bureaucrat b)
+void	RobotomyRequestForm::beSigned(Bureaucrat& b)
 {
     if (this->getSigned())
         throw RobotomyRequestForm::FormAlreadySignedException();

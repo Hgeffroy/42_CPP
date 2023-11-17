@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 09:02:42 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 13:17:53 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 08:12:26 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ public:
 	int			getSignGrade() const;
 	int			getExecGrade() const;
 
-	void	beSigned(Bureaucrat b);
+	void	beSigned(Bureaucrat &b);
 
 	class GradeTooHighException : public std::exception
 	{
 	public:
 		virtual const char*	what() const throw()
 		{
-			return ("his grade is too high\n");
+			return ("form grade is too high\n");
 		}
 	};
 
@@ -57,9 +57,19 @@ public:
 	public:
 		virtual const char*	what() const throw()
 		{
-			return ("his grade is too low\n");
+			return ("form grade is too low\n");
 		}
 	};
+
+	class FormAlreadySignedException : public std::exception
+	{
+	public:
+		virtual const char*	what() const throw()
+		{
+			return ("the form is already signed.\n");
+		}
+	};
+
 };
 
 #endif

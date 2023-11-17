@@ -42,7 +42,7 @@ public:
 	int			getExecGrade() const;
 	void		setSigned();
 
-	virtual void	beSigned(Bureaucrat b) = 0;
+	virtual void	beSigned(Bureaucrat& b) = 0;
 	virtual void	execute(Bureaucrat const& executor) const;
 
 	class GradeTooHighException : public std::exception

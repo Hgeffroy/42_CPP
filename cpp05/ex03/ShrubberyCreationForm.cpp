@@ -41,7 +41,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return (*this);
 }
 
-void	ShrubberyCreationForm::beSigned(Bureaucrat b)
+void	ShrubberyCreationForm::beSigned(Bureaucrat& b)
 {
     if (this->getSigned())
         throw ShrubberyCreationForm::FormAlreadySignedException();

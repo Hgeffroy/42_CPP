@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:58:26 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/06 16:02:49 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 08:17:53 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return (*this);
 }
 
-void	ShrubberyCreationForm::beSigned(Bureaucrat b)
+void	ShrubberyCreationForm::beSigned(Bureaucrat& b)
 {
     if (this->getSigned())
         throw ShrubberyCreationForm::FormAlreadySignedException();
 	else if (b.getGrade() <= this->getSignGrade())
 		this->setSigned();
 	else
-		throw ShrubberyCreationForm::GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const& executor) const

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:11:49 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/06 15:41:40 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 08:17:53 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm
 	return (*this);
 }
 
-void	PresidentialPardonForm::beSigned(Bureaucrat b)
+void	PresidentialPardonForm::beSigned(Bureaucrat& b)
 {
     if (this->getSigned())
         throw PresidentialPardonForm::FormAlreadySignedException();
 	else if (b.getGrade() <= this->getSignGrade())
 		this->setSigned();
 	else
-		throw PresidentialPardonForm::GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 }
 
 void	PresidentialPardonForm::execute(Bureaucrat const& executor) const

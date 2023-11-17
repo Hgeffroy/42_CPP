@@ -42,7 +42,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm
 	return (*this);
 }
 
-void	PresidentialPardonForm::beSigned(Bureaucrat b)
+void	PresidentialPardonForm::beSigned(Bureaucrat& b)
 {
     if (this->getSigned())
         throw PresidentialPardonForm::FormAlreadySignedException();

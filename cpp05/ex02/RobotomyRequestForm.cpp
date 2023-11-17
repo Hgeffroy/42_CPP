@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:57:57 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/06 16:00:45 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 08:17:53 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const& r
 	return (*this);
 }
 
-void	RobotomyRequestForm::beSigned(Bureaucrat b)
+void	RobotomyRequestForm::beSigned(Bureaucrat& b)
 {
     if (this->getSigned())
         throw RobotomyRequestForm::FormAlreadySignedException();
 	else if (b.getGrade() <= this->getSignGrade())
 		this->setSigned();
 	else
-		throw RobotomyRequestForm::GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 }
 
 void	RobotomyRequestForm::execute(Bureaucrat const& executor) const

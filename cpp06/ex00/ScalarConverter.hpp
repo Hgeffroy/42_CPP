@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:39:51 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/08 12:39:51 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:35:22 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,33 @@
 # define SCALARCONVERTER_HPP
 
 # include <iostream>
+# include <sstream>
 # include <string>
+# include "stdbool.h"
 # include <cstdlib>
 # include <cmath>
+# include <limits>
 
 class	ScalarConverter
 {
 
 private:
 
-	static char		_c;
-	static int		_i;
-	static float	_f;
-	static double	_d;
 
-	// Constructeur et tout ici
 
 public:
 
 	static void	convert(std::string toConvert);
-	static void	print();
 
+};
+
+enum	e_type
+{
+	CHAR,
+	INT,
+	FLOAT,
+	DOUBLE,
+	INVALID
 };
 
 #endif

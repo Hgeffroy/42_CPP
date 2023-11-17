@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:34:54 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/13 15:45:52 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/16 08:53:01 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <vector>
 # include <cmath>
+
+// Utiliser des algos ! Adjacent_difference ?
 
 class Span
 {

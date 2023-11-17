@@ -31,7 +31,7 @@ public:
 	
 	PresidentialPardonForm& operator=(PresidentialPardonForm const& rightValue);
 
-	void	beSigned(Bureaucrat b);
+	void	beSigned(Bureaucrat& b);
 	void	execute(Bureaucrat const& executor) const;
 	
 };

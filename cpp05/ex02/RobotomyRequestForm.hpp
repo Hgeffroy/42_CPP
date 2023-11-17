@@ -32,7 +32,7 @@ public:
 	
 	RobotomyRequestForm& operator=(RobotomyRequestForm const& rightValue);
 	
-	void	beSigned(Bureaucrat b);
+	void	beSigned(Bureaucrat& b);
 	void	execute(Bureaucrat const& executor) const;
 
 	

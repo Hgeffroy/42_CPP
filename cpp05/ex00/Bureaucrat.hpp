@@ -33,11 +33,12 @@ public:
 	Bureaucrat(std::string name, int grade);
 
 	Bureaucrat& operator=(Bureaucrat const& rightValue);
-	Bureaucrat& operator++();
-	Bureaucrat& operator--();
 
 	std::string	getName() const;
 	int			getGrade() const;
+
+	Bureaucrat& increment();
+	Bureaucrat& decrement();
 
 	class GradeTooHighException : public std::exception
 	{

@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 07:08:09 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/15 10:28:20 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/16 09:24:12 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,31 +40,32 @@ int	convertDate(std::string datestr)
 //	std::cout << "d = " << d << " ; ";
 
 	if (m > 12 || m < 1 || d > 31 || d < 1 || y < 1)
-		throw std::exception(); // regarder pour faire une exception propre.
-
-
+		throw std::exception(); // Pimper l'exception
 
 	return ((y << 9) + (m << 5) + d);
 }
 
-void	lineManager(int& date, float& value, std::string line)
+void	lineManager(int& date, float& value, std::string line, std::string separator)
 {
 	int 		comma;
 	std::string	datestr;
 	std::string valuestr;
-	std::string separator = ",";
 
 	comma = line.find(separator, 0);
 	datestr = line.substr(0, comma);
 	valuestr = line.substr(comma + 1, line.length());
-//	std::cout << datestr << " ; ";
-//	std::cout << valuestr << std::endl;
-	date = convertDate(datestr);
-//	std::cout << "Date converted: " << date << std::endl;
+	try
+	{
+		date = convertDate(datestr);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	value = static_cast<float>(std::atof(valuestr.c_str()));
 }
 
-void	fillMap(std::map<int, float> data)
+void	fillMap(std::map<int, float>& data)
 {
 	std::ifstream	infile("data.csv", std::ios::in);
 	std::string 	line;
@@ -75,9 +76,9 @@ void	fillMap(std::map<int, float> data)
 		int 	date;
 		float	value;
 
-		lineManager(date, value, line);
+		lineManager(date, value, line, ",");
 		data[date] = value;
 	}
-//	printData(data);
+	printData(data);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 09:03:28 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/31 08:38:05 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 08:15:03 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,14 @@ int	Form::getExecGrade() const
 	return (this->_execGrade);
 }
 
-void	Form::beSigned(Bureaucrat b)
+void	Form::beSigned(Bureaucrat& b)
 {
+	if (this->getSigned())
+		throw Form::FormAlreadySignedException();
 	if (b.getGrade() <= this->_signGrade)
 		this->_signed = true;
 	else
-		throw Form::GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 }
 
 

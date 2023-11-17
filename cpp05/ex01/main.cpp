@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 13:06:19 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/30 13:20:13 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 08:14:05 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,48 @@
 
 int	main()
 {
-	Bureaucrat	a("Harvey", 1);
-	Bureaucrat	b("Louis", 150);
+	std::cout << "Form grade too low:" << std::endl;
+	{
+		try
+		{
+			Form		f2("28B", 151, 20);
+		}
+		catch(std::exception &e)
+		{
+			std::cerr << "couldn't create form because " << e.what() << std::endl;
+		}
+	}
 
-	Form		f1("28B", 20, 20);
+	std::cout << "Bureaucrat grade too low:" << std::endl;
+	{
+		Bureaucrat	a("Louis", 150);
+		Form		f1("28B", 20, 20);
 
-	a.signForm(f1);
-	b.signForm(f1);
+		try
+		{
+			a.signForm(f1);
+		}
+		catch(std::exception &e)
+		{
+			std::cerr << a.getName() << " couldn't sign form because " << e.what() << std::endl;
+		}
+	}
+
+	std::cout << std::endl << "Sign twice:" << std::endl;
+	{
+		Bureaucrat	a("Harvey", 1);
+		Form		f1("28B", 20, 20);
+
+		try
+		{
+			a.signForm(f1);
+			a.signForm(f1);
+		}
+		catch(std::exception &e)
+		{
+			std::cerr << a.getName() << " couldn't sign form because " << e.what() << std::endl;
+		}
+	}
+
+
 }

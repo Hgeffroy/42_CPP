@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 13:06:19 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/31 12:43:41 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 08:26:31 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	main()
 
     Intern      i;
 
-    std::cout << std::endl;
-    AForm*      f0 = i.makeForm("lala", "Thea");
+//    std::cout << std::endl;
+//    AForm*      f0 = i.makeForm("lala", "Thea");
     std::cout << std::endl;
     AForm*      f1 = i.makeForm("PresidentialPardon", "Thea");
     std::cout << std::endl;
@@ -32,7 +32,7 @@ int	main()
     std::cout << std::endl;
     AForm*      f3 = i.makeForm("ShrubberyCreation", "Brieuc");
 
-    (void)f0;
+//    (void)f0;
 //	  PresidentialPardonForm      f1("Thea");
 //    RobotomyRequestForm         f2("Arthur");
 //    ShrubberyCreationForm       f3("Brieuc");

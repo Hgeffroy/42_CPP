@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 09:02:42 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/31 13:02:02 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 08:22:09 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ public:
 	int			getExecGrade() const;
 	void		setSigned();
 
-	virtual void	beSigned(Bureaucrat b) = 0;
+	virtual void	beSigned(Bureaucrat& b) = 0;
 	virtual void	execute(Bureaucrat const& executor) const;
 
 	class GradeTooHighException : public std::exception
@@ -50,7 +50,7 @@ public:
 	public:
 		virtual const char*	what() const throw()
 		{
-			return ("his grade is too high.");
+			return ("form grade is too high.");
 		}
 	};
 
@@ -59,7 +59,7 @@ public:
 	public:
 		virtual const char*	what() const throw()
 		{
-			return ("his grade is too low.");
+			return ("form grade is too low.");
 		}
 	};
 

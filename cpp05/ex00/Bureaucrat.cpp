@@ -55,7 +55,7 @@ std::ostream& operator<<(std::ostream& os, Bureaucrat const& rightValue)
 	return (os);
 }
 
-Bureaucrat& Bureaucrat::operator++()
+Bureaucrat& Bureaucrat::increment()
 {	
 	if (this->_grade == 1)
 		throw Bureaucrat::GradeTooHighException();
@@ -64,7 +64,7 @@ Bureaucrat& Bureaucrat::operator++()
 	return (*this);
 }
 
-Bureaucrat& Bureaucrat::operator--()
+Bureaucrat& Bureaucrat::decrement()
 {
 	if (this->_grade == 150)
 		throw Bureaucrat::GradeTooLowException();
