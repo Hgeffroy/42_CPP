@@ -40,7 +40,7 @@ int	main(int ac, char **av)
 		std::map<int, float>::iterator	it;
 
 		lineManager(date, value, line, "|");
-		it = data.lower_bound(date);
+		it = data.upper_bound(date);
 		if (it != data.begin())
 			it--;
 		printRes(date, value, it->second);

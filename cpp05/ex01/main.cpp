@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 13:06:19 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/17 08:14:05 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 11:03:00 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ int	main()
 		Bureaucrat	a("Louis", 150);
 		Form		f1("28B", 20, 20);
 
+		std::cout << a << std::endl;
+		std::cout << f1 << std::endl;
+
 		try
 		{
 			a.signForm(f1);
@@ -45,6 +48,9 @@ int	main()
 	{
 		Bureaucrat	a("Harvey", 1);
 		Form		f1("28B", 20, 20);
+
+		std::cout << a << std::endl;
+		std::cout << f1 << std::endl;
 
 		try
 		{

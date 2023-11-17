@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 09:02:42 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/17 10:18:50 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:24:08 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ public:
 
 };
 
-std::ostream& operator<<(std::ostream& os, Bureaucrat const& rightValue);
+std::ostream& operator<<(std::ostream& os, Form const& rightValue);
 
 #endif

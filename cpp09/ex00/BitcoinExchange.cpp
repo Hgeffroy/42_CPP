@@ -40,7 +40,7 @@ int	convertDate(std::string datestr)
 //	std::cout << "d = " << d << " ; ";
 
 	if (m > 12 || m < 1 || d > 31 || d < 1 || y < 1)
-		throw std::exception(); // Pimper l'exception
+		throw InvalidDateException();
 
 	return ((y << 9) + (m << 5) + d);
 }
