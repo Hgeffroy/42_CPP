@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 09:03:28 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/10/31 13:07:35 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:42:27 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,16 @@ AForm& AForm::operator=(AForm const& rightValue)
 	return (*this);
 }
 
+std::ostream& operator<<(std::ostream& os, AForm const& rightValue)
+{
+	os << rightValue.getName() << " form: " << std::endl;
+	os << "Signed: " << rightValue.getSigned() << std::endl;
+	os << "Minimum grade to sign: " << rightValue.getSignGrade() << std::endl;
+	os << "Minimum grade to execute: " << rightValue.getExecGrade() << std::endl;
+
+	return (os);
+}
+
 std::string	AForm::getName() const
 {
 	return (this->_name);
@@ -79,4 +89,24 @@ void	AForm::execute(Bureaucrat const& executor) const
         throw AForm::FormNotSignedException();
     else
         std::cout << executor << " executed " << this->_name << "." << std::endl;
+}
+
+const char*	AForm::GradeTooLowException::what() const throw()
+{
+	return ("his grade is too high.");
+}
+
+const char*	AForm::GradeTooHighException::what() const throw()
+{
+	return ("his grade is too low.");
+}
+
+const char*	AForm::FormNotSignedException::what() const throw()
+{
+	return ("the form is not signed.");
+}
+
+const char*	AForm::FormAlreadySignedException::what() const throw()
+{
+	return ("the form is already signed.");
 }

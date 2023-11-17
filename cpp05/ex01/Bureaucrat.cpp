@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 10:25:06 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/01 10:12:11 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:24:08 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,14 @@ void	Bureaucrat::signForm(Form &f)
 	}
 	
 	std::cout << this->_name << " signed " << f.getName() << std::endl;
+}
+
+const char*	Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Bureaucrat grade too low\n");
+}
+
+const char*	Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Bureaucrat grade too high\n");
 }

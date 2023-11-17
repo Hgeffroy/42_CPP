@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgeffroy <hgeffroy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 10:25:06 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/01 10:10:25 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:43:42 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ std::ostream& operator<<(std::ostream& os, Bureaucrat const& rightValue)
 	return (os);
 }
 
-Bureaucrat& Bureaucrat::increment()
+Bureaucrat& Bureaucrat::operator++()
 {	
 	if (this->_grade == 1)
 		throw Bureaucrat::GradeTooHighException();
@@ -64,7 +64,7 @@ Bureaucrat& Bureaucrat::increment()
 	return (*this);
 }
 
-Bureaucrat& Bureaucrat::decrement()
+Bureaucrat& Bureaucrat::operator--()
 {
 	if (this->_grade == 150)
 		throw Bureaucrat::GradeTooLowException();
@@ -82,4 +82,15 @@ int	Bureaucrat::getGrade() const
 {
 	return (this->_grade);
 }
+
+const char*	Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Bureaucrat grade too low\n");
+}
+
+const char*	Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Bureaucrat grade too high\n");
+}
+
 

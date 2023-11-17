@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 09:02:42 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/17 08:12:26 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:18:50 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,30 +46,23 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		virtual const char*	what() const throw()
-		{
-			return ("form grade is too high\n");
-		}
+		virtual const char*	what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		virtual const char*	what() const throw()
-		{
-			return ("form grade is too low\n");
-		}
+		virtual const char*	what() const throw();
 	};
 
 	class FormAlreadySignedException : public std::exception
 	{
 	public:
-		virtual const char*	what() const throw()
-		{
-			return ("the form is already signed.\n");
-		}
+		virtual const char*	what() const throw();
 	};
 
 };
+
+std::ostream& operator<<(std::ostream& os, Bureaucrat const& rightValue);
 
 #endif

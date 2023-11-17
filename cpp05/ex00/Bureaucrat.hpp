@@ -33,29 +33,22 @@ public:
 	Bureaucrat(std::string name, int grade);
 
 	Bureaucrat& operator=(Bureaucrat const& rightValue);
+	Bureaucrat& operator++();
+	Bureaucrat& operator--();
 
 	std::string	getName() const;
 	int			getGrade() const;
 
-	Bureaucrat& increment();
-	Bureaucrat& decrement();
-
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		virtual const char*	what() const throw()
-		{
-			return ("grade is too high\n");
-		}
+		virtual const char*	what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		virtual const char*	what() const throw()
-		{
-			return ("grade is too low\n");
-		}
+		virtual const char*	what() const throw();
 	};
 };
 

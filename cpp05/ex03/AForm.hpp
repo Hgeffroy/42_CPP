@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 09:02:42 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/17 08:22:09 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:31:11 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,39 +48,29 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		virtual const char*	what() const throw()
-		{
-			return ("form grade is too high.");
-		}
+		virtual const char*	what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		virtual const char*	what() const throw()
-		{
-			return ("form grade is too low.");
-		}
+		virtual const char*	what() const throw();
 	};
 
-    class FormNotSignedException : public std::exception
-    {
-    public:
-        virtual const char*	what() const throw()
-        {
-            return ("the form is not signed.");
-        }
-    };
+	class FormNotSignedException : public std::exception
+	{
+	public:
+		virtual const char*	what() const throw();
+	};
 
-    class FormAlreadySignedException : public std::exception
-    {
-    public:
-        virtual const char*	what() const throw()
-        {
-            return ("the form is already signed.");
-        }
-    };
+	class FormAlreadySignedException : public std::exception
+	{
+	public:
+		virtual const char*	what() const throw();
+	};
 	
 };
+
+std::ostream& operator<<(std::ostream& os, AForm const& rightValue);
 
 #endif
