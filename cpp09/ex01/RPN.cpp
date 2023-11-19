@@ -10,3 +10,56 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "RPN.hpp"
+
+bool	isop(char c)
+{
+	char	op[] = "-+/*";
+	int 	i = 0;
+
+	while (op[i])
+	{
+		if (c == op[i])
+			return true;
+		i++;
+	}
+	return false;
+}
+
+int	compute(std::stack<int>& stack, char c)
+{
+	if (stack.size() < 2)
+		return (-1);
+
+	char	op[] = "-+/*";
+	int 	i = 0;
+
+	while (op[i])
+	{
+		if (c == op[i])
+			break;
+		i++;
+	}
+
+	int val2 = stack.top();
+	stack.pop();
+	int val1 = stack.top();
+	stack.pop();
+
+	switch (i)
+	{
+		case 0:
+			stack.push(val1 - val2);
+			break;
+		case 1:
+			stack.push(val1 + val2);
+			break;
+		case 2:
+			stack.push(val1 / val2);
+			break;
+		case 3:
+			stack.push(val1 * val2);
+			break;
+	}
+	return (0);
+}

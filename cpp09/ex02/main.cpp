@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 13:01:45 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/10 09:29:43 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/18 14:03:43 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/19 13:56:45 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#include "PmergeMe.hpp"
 
-# include <iostream>
-
-template <typename T>
-void	iter(T* ptr, size_t len, int (*f)(T&)) // Si la fonction retourne autre chose ?
+int	main(int ac, char **av)
 {
-	for (size_t i = 0; i < len; i++)
-		f(ptr[i]);
-}
+	std::vector<int>	v;
 
-int	increment(int& a)
-{
-	++a;
-	return (0);
-}
+	if (ac < 3)
+	{
+		std::cerr << "You need at least 2 integers to sort something you moron" << std::endl;
+		return (-1);
+	}
 
-void	ft_toupper(char& c)
-{
-	if (c > 'a' && c < 'z')
-		c = c - 'a' + 'A';
-}
 
-#endif
+	fillContainer(av, v); //try catch
+	v = sort(v, 3);
+	printContainer(v, "Vector");
+}

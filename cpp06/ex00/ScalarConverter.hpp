@@ -16,10 +16,10 @@
 # include <iostream>
 # include <sstream>
 # include <string>
-# include "stdbool.h"
 # include <cstdlib>
 # include <cmath>
 # include <limits>
+# include "stdbool.h"
 
 class	ScalarConverter
 {

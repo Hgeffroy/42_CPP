@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 13:01:45 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/10 09:29:43 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/18 13:55:57 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/19 15:51:31 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#ifndef PMERGE_HPP
+# define PMERGE_HPP
 
 # include <iostream>
+# include <sstream>
+# include <string>
+# include <deque>
+# include <vector>
+# include <cstdlib>
 
-template <typename T>
-void	iter(T* ptr, size_t len, int (*f)(T&)) // Si la fonction retourne autre chose ?
-{
-	for (size_t i = 0; i < len; i++)
-		f(ptr[i]);
-}
-
-int	increment(int& a)
-{
-	++a;
-	return (0);
-}
-
-void	ft_toupper(char& c)
-{
-	if (c > 'a' && c < 'z')
-		c = c - 'a' + 'A';
-}
+void				printContainer(std::vector<int>& v, std::string name);
+void				insertSort(std::vector<int>& v);
+void				fillContainer(char **av, std::vector<int>& v);
+std::vector<int>	sort(std::vector<int>& v, int sz);
 
 #endif

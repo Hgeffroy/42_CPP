@@ -22,7 +22,7 @@ AForm::~AForm()
 	std::cout << "AForm default destructor called" << std::endl;
 }
 
-AForm::AForm(AForm const& cpyFrom) : _name("Undefined"), _signGrade(150), _execGrade(150)
+AForm::AForm(AForm const& cpyFrom) : _name(cpyFrom._name), _signGrade(cpyFrom._signGrade), _execGrade(cpyFrom._execGrade)
 {
 	*this = cpyFrom;
 	

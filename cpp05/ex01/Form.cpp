@@ -22,7 +22,7 @@ Form::~Form()
 	std::cout << "Form default destructor called" << std::endl;
 }
 
-Form::Form(Form const& cpyFrom) : _name("Undefined"), _signGrade(150), _execGrade(150)
+Form::Form(Form const& cpyFrom) : _name(cpyFrom._name), _signGrade(cpyFrom._signGrade), _execGrade(cpyFrom._execGrade)
 {
 	*this = cpyFrom;
 	

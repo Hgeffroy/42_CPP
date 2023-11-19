@@ -18,4 +18,7 @@
 # include <cstdlib>
 # include <stack>
 
+int		compute(std::stack<int>& stack, char c);
+bool	isop(char c);
+
 #endif
