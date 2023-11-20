@@ -24,7 +24,8 @@ HEADERS			=		ScalarConverter.hpp
 #--sources & objects-----------------------------------------------------------#
 
 SOURCES			=		main.cpp \
-						ScalarConverter.cpp
+						ScalarConverter.cpp \
+						convert.cpp
 
 OBJ_DIR         =       .objs/
 

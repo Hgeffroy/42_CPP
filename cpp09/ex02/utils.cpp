@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 14:03:43 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/19 13:56:45 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/20 09:33:07 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/20 11:12:19 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-int	main(int ac, char **av)
+void	checkArg(std::string arg) // Pas sur de ca, sinon mettre un char * et le cast a la main.
 {
-	std::vector<int>	v;
+	std::istringstream	iss(arg);
+	int 				i;
 
-	if (ac < 3)
-	{
-		std::cerr << "You need at least 2 integers to sort something you moron" << std::endl;
-		return (-1);
-	}
-
-
-//	fillContainer(av, v); //try catch
-//	v = sort(v, 3);
-//	printContainer(v, "Vector");
+	iss >> i;
+	if (!iss.eof() || iss.fail())
+		throw std::exception();
 }
+
+
+

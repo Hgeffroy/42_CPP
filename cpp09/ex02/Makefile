@@ -6,7 +6,7 @@
 #    By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/11/17 13:51:41 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/11/20 09:58:42 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,10 @@ HEADERS			=		PmergeMe.hpp
 #--sources & objects-----------------------------------------------------------#
 
 SOURCES			=		main.cpp \
-						PmergeMe.cpp
+						utils.cpp \
+						PmergeMe.cpp \
+						# mergeInsertSort/mergeInsert.cpp
+						# mergeInsertSort/utils.cpp
 
 OBJ_DIR         =       .objs/
 

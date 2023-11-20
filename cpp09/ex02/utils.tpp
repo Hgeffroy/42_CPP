@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.tpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 14:03:43 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/19 13:56:45 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/18 13:55:57 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/20 11:00:52 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-int	main(int ac, char **av)
+template <typename T>
+void	split(T& v, T& v1, T& v2)
 {
-	std::vector<int>	v;
+	typename T::iterator	it;
+	int 					i = 0;
+	int 					s = v.size();
 
-	if (ac < 3)
+	for(it = v.begin(); it != v.end(); ++it)
 	{
-		std::cerr << "You need at least 2 integers to sort something you moron" << std::endl;
-		return (-1);
+		if (i < s / 2)
+			v1.push_back(*it);
+		else
+			v2.push_back(*it);
+		i++;
 	}
-
-
-//	fillContainer(av, v); //try catch
-//	v = sort(v, 3);
-//	printContainer(v, "Vector");
 }

@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:39:51 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/16 12:35:22 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/20 09:21:20 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,14 @@ class	ScalarConverter
 
 private:
 
-
+	ScalarConverter();
+	ScalarConverter(ScalarConverter const& cpyFrom);
 
 public:
+
+	~ScalarConverter();
+
+	ScalarConverter& operator=(ScalarConverter const& rightValue);
 
 	static void	convert(std::string toConvert);
 

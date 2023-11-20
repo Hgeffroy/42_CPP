@@ -5,88 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 14:03:32 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/19 16:06:02 by hgeffroy         ###   ########.fr       */
+/*   Created: 2023/11/20 09:34:00 by hgeffroy          #+#    #+#             */
+/*   Updated: 2023/11/20 15:48:52 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-void	printContainer(std::vector<int>& v, std::string name)
-{
-	std::vector<int>::iterator	it;
-	std::cout << name << ": ";
-	for (it = v.begin(); it != v.end(); ++it)
-	{
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
-}
+//On va faire un vector de pair.
 
-void	checkArg(std::string arg) // Pas sur de ca, sinon mettre un char * et le cast a la main.
-{
-	std::istringstream	iss(arg);
-	int 				i;
-
-	iss >> i;
-	if (!iss.eof() || iss.fail())
-		throw std::exception();
-}
-
-void	fillContainer(char **av, std::vector<int>& v)
+void	fillContainerPairs(char **av, std::vector< std::pair<int, int> >& v) // Le plus grand est dans first !!
 {
 	int i = 1;
 
 	while (av[i])
 	{
 		checkArg(av[i]);
-		v.push_back(std::atoi(av[i]));
+		if (av[++i])
+		{
+			checkArg(av[i]);
+			if (av[i] > av[i - 1])
+				v.push_back(std::make_pair(std::atoi(av[i]), std::atoi(av[i - 1])));
+			else
+				v.push_back(std::make_pair(std::atoi(av[i - 1]), std::atoi(av[i])));
+		}
+		else
+		{
+			v.push_back(std::make_pair(std::atoi(av[i - 1]), -1));
+			break ;
+		}
 		i++;
 	}
 }
 
-void	eraseFirstNotSorted(std::vector<int>& v)
+std::vector< std::pair<int, int> >	FJMerge(std::vector< std::pair<int, int> >& v1, std::vector< std::pair<int, int> >& v2)
 {
-	std::vector<int>::iterator	it1 = v.begin();
-	int 						i = *it1;
-
-	++it1;
-	while (it1 != v.end())
-	{
-		if (*it1 < i)
-		{
-			v.erase(it1);
-			return ;
-		}
-		i = *it1;
-		++it1;
-	}
-}
-
-void	insertSort(std::vector<int>& v) // 5 2, 5 2 6 8
-{
-	std::vector<int>::iterator	it1;
-
-	for (it1 = v.begin(); it1 != v.end(); ++it1)
-	{
-		std::vector<int>::iterator	it2;
-		for (it2 = v.begin(); it2 != it1; ++it2)
-		{
-			if (*it2 > *it1)
-			{
-				it1 = v.insert(it2, *it1);
-				eraseFirstNotSorted(v);
-				break ;
-			}
-		}
-	}
-}
-
-std::vector<int>	merge(std::vector<int>& v1, std::vector<int>& v2)
-{
-	std::vector<int>	res;
-	std::vector<int>::iterator	it1 = v1.begin();
-	std::vector<int>::iterator	it2 = v2.begin();
+	std::vector< std::pair<int, int> >				res;
+	std::vector< std::pair<int, int> >::iterator	it1 = v1.begin();
+	std::vector< std::pair<int, int> >::iterator	it2 = v2.begin();
 
 	while (v1.size() > 0 || v2.size() > 0)
 	{
@@ -102,7 +58,7 @@ std::vector<int>	merge(std::vector<int>& v1, std::vector<int>& v2)
 		}
 		else
 		{
-			if (*it1 > *it2)
+			if (*it1.first > *it2.first)
 			{
 				res.push_back(*it2);
 				it2 = v2.erase(it2);
@@ -117,37 +73,39 @@ std::vector<int>	merge(std::vector<int>& v1, std::vector<int>& v2)
 	return (res);
 }
 
-void	split(std::vector<int>& v, std::vector<int>& v1, std::vector<int>& v2)
+std::vector< std::pair<int, int> >	FJMergeSort(std::vector< std::pair<int, int> >& v)
 {
-	std::vector<int>::iterator	it;
-	int 						i = 0;
-	int 						s = v.size();
-
-	for(it = v.begin(); it != v.end(); ++it)
-	{
-		if (i < s / 2)
-			v1.push_back(*it);
-		else
-			v2.push_back(*it);
-		i++;
-	}
-}
-
-std::vector<int>	sort(std::vector<int>& v, int sz)
-{
-	std::vector<int>	v1;
-	std::vector<int>	v2;
+	std::vector< std::pair<int, int> >	v1;
+	std::vector< std::pair<int, int> >	v2;
 
 	split(v, v1, v2);
-	if (v1.size() < sz && v2.size() < sz)
+	if (!(v1.size() < 2 && v2.size() < 2))
 	{
-		insertSort(v1);
-		insertSort(v2);
+		v1 = FJSort(v1);
+		v2 = FJSort(v2);
 	}
-	else
+	return (FJMergeSort(v1, v2));
+}
+
+void	splitPairs(std::vector< std::pair<int, int> >& v, std::vector<int>& high, std::vector<int>& low)
+{
+	std::vector< std::pair<int, int> >::iterator	it;
+
+	for (it = v.begin(); it != v.end(); ++it)
 	{
-		v1 = sort(v1, sz);
-		v2 = sort(v2, sz);
+		high.push_back(*it.first);
+		low.push_back(*it->second);
 	}
-	return (merge(v1, v2));
+
+	std::advance(it, 2);
+}
+
+//Il va falloir compter le nombre de truc que j'ajoute.
+
+std::vector<int>	FJInsertSort(std::vector<int>& high, std::vector<int> low)
+{
+	int	nbInserted;
+
+
+	return (high);
 }
