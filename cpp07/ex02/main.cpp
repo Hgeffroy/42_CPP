@@ -14,17 +14,13 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
 
 	for (int i = 0; i < MAX_VAL; i++)
 	{
 		std::cout << "numbers[" << i << "] = " << numbers[i] << std::endl;
 	}
 
+	//Check
     for (int i = 0; i < MAX_VAL; i++)
     {
         if (mirror[i] != numbers[i])
@@ -33,6 +29,8 @@ int main(int, char**)
             return 1;
         }
     }
+
+	std::cout << std::endl;
     try
     {
         numbers[-2] = 0;
@@ -54,6 +52,7 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
+	std::cout << std::endl;
     delete [] mirror;
 
 	/*---------------------------------------------------------------------------*/
@@ -66,17 +65,13 @@ int main(int, char**)
 		numbersb[i] = value;
 		mirrorb[i] = value;
 	}
-	//SCOPE
-	{
-		Array<char> tmp = numbersb;
-		Array<char> test(tmp);
-	}
 
 	for (int i = 0; i < MAX_VAL; i++)
 	{
 		std::cout << "numbersb[" << i << "] = " << numbersb[i] << std::endl;
 	}
 
+	//Check
 	for (int i = 0; i < MAX_VAL; i++)
 	{
 		if (mirrorb[i] != numbersb[i])
@@ -85,28 +80,9 @@ int main(int, char**)
 			return 1;
 		}
 	}
-	try
-	{
-		numbersb[-2] = 0;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	try
-	{
-		numbersb[MAX_VAL] = 0;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
 
-	for (int i = 0; i < MAX_VAL; i++)
-	{
-		numbersb[i] = rand();
-	}
 	delete [] mirrorb;
+
 
     return 0;
 

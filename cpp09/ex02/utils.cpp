@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 09:33:07 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/20 11:12:19 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/21 09:17:25 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,13 @@ void	checkArg(std::string arg) // Pas sur de ca, sinon mettre un char * et le ca
 		throw std::exception();
 }
 
-
-
+void	printContainer(std::vector<int>& v, std::string name)
+{
+	std::vector<int>::iterator	it;
+	std::cout << name << ": ";
+	for (it = v.begin(); it != v.end(); ++it)
+	{
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+}

@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 14:03:43 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/19 13:56:45 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/21 09:34:56 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ int	main(int ac, char **av)
 		std::cerr << "You need at least 2 integers to sort something you moron" << std::endl;
 		return (-1);
 	}
-
-
-//	fillContainer(av, v); //try catch
-//	v = sort(v, 3);
-//	printContainer(v, "Vector");
+	v = FJSort(av);
+	printContainer(v, "Vector");
 }

@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 13:55:57 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/20 12:49:07 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/21 09:34:56 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <vector>
 # include <cstdlib>
 # include <utility>
-# icnlude <iterator>
+# include <iterator>
 
 # include "utils.tpp"
 
@@ -36,6 +36,6 @@ void				insertSort(std::vector<int>& v);
 std::vector<int>	sort(std::vector<int>& v, int sz);
 
 // F-J vectors
-void				fillContainerPairs(char **av, std::vector< std::pair<int, int> >& v);
+std::vector<int>	FJSort(char **av);
 
 #endif

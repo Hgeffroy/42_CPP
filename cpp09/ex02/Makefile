@@ -19,7 +19,8 @@ DEBUG           =       no
 
 INC_DIR         =       ./
 
-HEADERS			=		PmergeMe.hpp
+HEADERS			=		PmergeMe.hpp \
+						utils.tpp
 
 #--sources & objects-----------------------------------------------------------#
 

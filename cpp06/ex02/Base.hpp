@@ -16,7 +16,6 @@
 # include <iostream>
 # include <time.h>
 # include <cstdlib>
-# include <typeinfo>
 
 class	Base
 {

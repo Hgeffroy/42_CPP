@@ -16,6 +16,7 @@ template <typename T>
 Array<T>::Array( void ) : _size(0)
 {
 	this->_array = new T[0];
+	std::memset(this->_array, 0, sizeof(T));
 }
 
 template <typename T>
@@ -36,6 +37,7 @@ template <typename T>
 Array<T>::Array( unsigned int n ) : _size(n)
 {
 	this->_array = new T[n];
+	std::memset(this->_array, 0, sizeof(T) * n);
 }
 
 template <typename T>
@@ -52,11 +54,7 @@ template <typename T>
 T&	Array<T>::operator[]( unsigned int n )
 {
 	if (n >= this->_size)
-		throw Array<T>::OutOfBoundException();
+		throw std::exception();
 	return (this->_array[n]);
 }
 
-//unsigned int const&	getSize( )
-//{
-//	return (this->_size);
-//}

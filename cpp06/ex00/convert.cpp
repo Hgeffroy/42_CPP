@@ -117,7 +117,6 @@ void	ScalarConverter::convert(std::string toConvert)
 	int 	type;
 
 	type = identify(toConvert);
-	std::cout << "Result of identify: " << type << std::endl;
 
 	switch(type)
 	{

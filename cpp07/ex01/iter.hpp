@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:01:45 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/10 09:29:43 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/21 09:03:59 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 # include <iostream>
 
-template <typename T>
-void	iter(T* ptr, size_t len, int (*f)(T&)) // Si la fonction retourne autre chose ?
+template <typename T, typename U, typename V>
+void	iter(T* ptr, U len, V fct)
 {
-	for (size_t i = 0; i < len; i++)
-		f(ptr[i]);
+	for (U i = 0; i < len; i++)
+		(fct)(ptr[i]);
 }
 
 int	increment(int& a)

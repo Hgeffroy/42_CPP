@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "iter.hpp"
-#include <ctype.h>
 
 int	main()
 {
@@ -23,8 +22,6 @@ int	main()
 
 	for (int i = 0; i < 10; i++)
 		std::cout << "array[" << i << "] = " << array[i] << std::endl;
-
-	/**/
 
 	char arraychar[] = "Youplaboom";
 

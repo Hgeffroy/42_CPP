@@ -23,15 +23,3 @@ void	fillContainer(char **av, std::vector<int>& v)
 		i++;
 	}
 }
-
-
-void	printContainer(std::vector<int>& v, std::string name)
-{
-	std::vector<int>::iterator	it;
-	std::cout << name << ": ";
-	for (it = v.begin(); it != v.end(); ++it)
-	{
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
-}
