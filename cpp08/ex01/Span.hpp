@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:34:54 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/16 08:53:01 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/22 13:28:10 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include <iostream>
 # include <vector>
+# include <algorithm>
+# include <cstdlib>
 # include <cmath>
-
-// Utiliser des algos ! Adjacent_difference ?
 
 class Span
 {
@@ -38,6 +38,7 @@ public:
 	Span&	operator=( Span const & toAssign );
 
 	void	addNumber( int nb );
+	void	addRangeNumber( std::vector<int>::iterator start, std::vector<int>::iterator end );
 	int		shortestSpan();
 	int		longestSpan();
 

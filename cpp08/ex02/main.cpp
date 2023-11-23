@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:34:53 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/15 13:09:11 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/22 14:54:20 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main()
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-//[...]
 	mstack.push(0);
 
 	mstack2 = mstack;
@@ -50,6 +49,16 @@ int	main()
 		++it2;
 	}
 
-	std::stack<int> s(mstack);
+	MutantStack<int> mstack3 = mstack;
+	MutantStack<int>::iterator it3 = mstack3.begin();
+	MutantStack<int>::iterator ite3 = mstack3.end();
+	++it3;
+	--it3;
+	while (it3 != ite3)
+	{
+		std::cout << *it3 << std::endl;
+		++it3;
+	}
+
 	return 0;
 }

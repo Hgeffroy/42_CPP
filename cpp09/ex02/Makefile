@@ -6,7 +6,7 @@
 #    By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:52:33 by hgeffroy          #+#    #+#              #
-#    Updated: 2023/11/20 09:58:42 by hgeffroy         ###   ########.fr        #
+#    Updated: 2023/11/23 17:08:38 by hgeffroy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,15 +20,12 @@ DEBUG           =       no
 INC_DIR         =       ./
 
 HEADERS			=		PmergeMe.hpp \
-						utils.tpp
+						PmergeMe.tpp \
 
 #--sources & objects-----------------------------------------------------------#
 
 SOURCES			=		main.cpp \
-						utils.cpp \
-						PmergeMe.cpp \
-						# mergeInsertSort/mergeInsert.cpp
-						# mergeInsertSort/utils.cpp
+						PmergeMe.cpp
 
 OBJ_DIR         =       .objs/
 
@@ -58,7 +55,7 @@ OBJECTS =       $(addprefix $(OBJ_DIR), $(SOURCES:.cpp=.o))
 all:
 		$(MAKE) $(NAME) -j
 
-$(NAME): $(OBJECTS) $(HEADERS)
+$(NAME): $(OBJECTS)
 		$(CPP) $(CFLAGS) $(OBJECTS) -o $@
 
 $(OBJ_DIR)%.o: %.cpp $(HEADERS)

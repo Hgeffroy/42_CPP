@@ -54,7 +54,7 @@ OBJECTS =       $(addprefix $(OBJ_DIR), $(SOURCES:.cpp=.o))
 all:
 		$(MAKE) $(NAME) -j
 
-$(NAME): $(OBJECTS) $(HEADERS)
+$(NAME): $(OBJECTS)
 		$(CPP) $(CFLAGS) $(OBJECTS) -o $@
 
 $(OBJ_DIR)%.o: %.cpp $(HEADERS)

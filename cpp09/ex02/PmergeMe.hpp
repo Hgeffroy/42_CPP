@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 13:55:57 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/21 09:34:56 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:26:45 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,20 @@
 # include <deque>
 # include <vector>
 # include <cstdlib>
+# include <ctime>
+# include <sys/time.h>
 # include <utility>
 # include <iterator>
-
-# include "utils.tpp"
+# include <algorithm>
 
 // Utils
 void	checkArg(std::string arg);
-void	printContainer(std::vector<int>& v, std::string name);
-
-
-
-// Merge insert
-void				fillContainer(char **av, std::vector<int>& v);
-void				insertSort(std::vector<int>& v);
-std::vector<int>	sort(std::vector<int>& v, int sz);
+int		getTime(struct timeval startTime);
+void	printContainerPairs(std::vector< std::pair<int, int> >& v);
 
 // F-J vectors
 std::vector<int>	FJSort(char **av);
+
+# include "PmergeMe.tpp"
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:20:13 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/17 14:57:53 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:35:02 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	compute(std::stack<int>& stack, char c)
 			stack.push(val1 + val2);
 			break;
 		case 2:
-			stack.push(val1 / val2);
+			stack.push(val1 / val2); //Throw !
 			break;
 		case 3:
 			stack.push(val1 * val2);

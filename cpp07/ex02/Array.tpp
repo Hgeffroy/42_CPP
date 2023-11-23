@@ -44,6 +44,7 @@ template <typename T>
 Array<T>&	Array<T>::operator=( Array<T> const & toAssign )
 {
 	delete[] this->_array;
+	this->_array = new T[toAssign._size];
 	for (unsigned int i = 0; i < this->_size; i++)
 		this->_array[i] = toAssign._array + i;
 
