@@ -15,7 +15,10 @@
 int	main(int ac, char **av)
 {
 	if (ac != 2)
+	{
 		std::cout << "This program should be ran with one argument" << std::endl;
+		return (-1);
+	}
 
 	int 			i = 0;
 	std::stack<int>	stack;
@@ -26,7 +29,7 @@ int	main(int ac, char **av)
 		{
 			if (av[1][i] != ' ')
 			{
-				std::cout << "Error" << std::endl;
+				std::cout << "Wrong arguments" << std::endl;
 				return (-1);
 			}
 		}
@@ -38,13 +41,13 @@ int	main(int ac, char **av)
 			{
 				if (compute(stack, av[1][i]) < 0)
 				{
-					std::cout << "Error" << std::endl;
+					std::cout << "Not enough numbers in the stack to process operand" << std::endl;
 					return (-1);
 				}
 			}
 			else
 			{
-				std::cout << "Error" << std::endl;
+				std::cout << "Wrong arguments" << std::endl;
 				return (-1);
 			}
 		}
@@ -53,7 +56,7 @@ int	main(int ac, char **av)
 
 	if (stack.size() != 1)
 	{
-		std::cout << "Error" << std::endl;
+		std::cout << "There are still elements in the stack" << std::endl;
 		return (-1);
 	}
 

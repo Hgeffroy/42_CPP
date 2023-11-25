@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 13:55:57 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/23 17:26:45 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/24 08:26:39 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@
 # include <algorithm>
 
 // Utils
-void	checkArg(std::string arg);
-int		getTime(struct timeval startTime);
-void	printContainerPairs(std::vector< std::pair<int, int> >& v);
+void				checkArg(std::string arg);
+int					getTime(struct timeval startTime);
+std::vector<int>	initJSSequence(int	n);
+
 
 // F-J vectors
 std::vector<int>	FJSort(char **av);

@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 07:06:57 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/17 12:34:02 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:09:13 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 # define BITCOINEXCHANGE_HPP
 
 # include <iostream>
+# include <iomanip>
 # include <cstdlib>
 # include <fstream>
+# include <sstream>
 # include <string>
 # include <stdexcept>
 # include <map>

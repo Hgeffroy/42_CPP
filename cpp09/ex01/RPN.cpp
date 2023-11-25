@@ -55,6 +55,8 @@ int	compute(std::stack<int>& stack, char c)
 			stack.push(val1 + val2);
 			break;
 		case 2:
+			if (val2 == 0)
+				return (-1);
 			stack.push(val1 / val2); //Throw !
 			break;
 		case 3:

@@ -19,9 +19,7 @@ Span::Span( void ) : _N(0)
 
 Span::Span( unsigned int N ) : _N(N)
 {
-	std::vector<int>::iterator	it;
-	for (it = this->_v.begin(); it != this->_v.end(); ++it)
-		*it = 0;
+
 }
 
 Span::Span( Span const & toCopy )

@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 07:42:53 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/17 13:09:50 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:26:24 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	printRes(int date, float value1, float value2)
 {
-	std::cout << (date >> 9) << "-" << ((date % ((date >> 9) << 9)) >> 5) << "-" << ((date % ((date >> 5) << 5)));
+	std::cout << (date >> 9) << "-";
+	std::cout << std::setw(2) << std::setfill('0') << (date % ((date >> 9) << 9) >> 5) << "-";
+	std::cout << std::setw(2) << std::setfill('0') << (date % ((date >> 5) << 5));
 	std::cout << " => ";
 	std::cout << value1 << " = " << value1 * value2 << std::endl;
 }
@@ -45,7 +47,7 @@ int	main(int ac, char **av)
 			if (value < 0 || value > 1000)
 				throw InvalidValueException();
 			it = data.lower_bound(date);
-			if (it != data.begin() && it->first != date && it->first < date)
+			if (it != data.begin() && it->first != date && it->first > data.begin()->first)
 				it--;
 			printRes(date, value, it->second);
 		}

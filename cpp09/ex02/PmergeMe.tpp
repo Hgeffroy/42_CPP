@@ -12,6 +12,23 @@
 
 #include "PmergeMe.hpp"
 
+/*************************************************  Utils  ************************************************************/
+
+template <typename T>
+void	isSorted(T& v)
+{
+	int	i = 1;
+	while (i < static_cast<int>(v.size()))
+	{
+		if (v[i] < v[i - 1])
+		{
+			std::cout << "C'est pas trie ici: " << i << std::endl;
+			throw std::exception();
+		}
+		i++;
+	}
+}
+
 template <typename T>
 void	printContainer(T& v, std::string name)
 {
@@ -20,6 +37,22 @@ void	printContainer(T& v, std::string name)
 	for (it = v.begin(); it != v.end(); ++it)
 	{
 		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+}
+
+template <typename T>
+void	printContainerPairs(T& v)
+{
+	typename T::iterator	it;
+	int 					i = 0;
+
+	for (it = v.begin(); it != v.end(); ++it)
+	{
+		std::cout << "v[" << i << "]: ";
+		std::cout << "first: " << it->first << "; ";
+		std::cout << "second: " << it->second << "; " << std::endl;
+		i++;
 	}
 	std::cout << std::endl;
 }
@@ -54,9 +87,7 @@ T	fillContainerPairs(char **av)
 		{
 			checkArg(av[i]);
 			if (std::atoi(av[i]) > std::atoi(av[i - 1]))
-			{
 				v.push_back(std::make_pair(std::atoi(av[i]), std::atoi(av[i - 1])));
-			}
 			else
 				v.push_back(std::make_pair(std::atoi(av[i - 1]), std::atoi(av[i])));
 		}
@@ -69,6 +100,8 @@ T	fillContainerPairs(char **av)
 	}
 	return (v);
 }
+
+/**************************************************  Sort  ************************************************************/
 
 template <typename T>
 T	FJMergeSort(T& v)
@@ -100,32 +133,32 @@ void	splitPairs(T& v, U& high, U& low)
 }
 
 template <typename T>
-T	FJInsertSort(T& high, T low)
+T	FJInsertSort(T& high, T low, unsigned int sz)
 {
-	int						nbInserted = 0;
-	typename T::iterator	itl = low.begin();
+	int							nbInserted = 0;
+	std::vector<int>			insertSeq = initJSSequence(sz);
+	std::vector<int>::iterator	itSeq = insertSeq.begin();
 
-	while (low.size() > 0)
+	while (itSeq != insertSeq.end())
 	{
-		int							upperBound = std::max<int>(2 * nbInserted - 1, high.size()); // Warning sur le premier !
+		int							upperBound = nbInserted + *itSeq - 1;
 		int 						lowerBound = 0;
 		int 						middle;
 		typename T::iterator		ith = high.begin();
 
-		while (lowerBound + 1 != upperBound)
+		while (lowerBound + 1 - upperBound < 0)
 		{
 			middle = (upperBound + lowerBound) / 2;
-			if (*itl < high[middle])
+			if (low[*itSeq - 1] < high[middle])
 				upperBound = middle;
 			else
 				lowerBound = middle;
 		}
-//		std::cout << "To insert: " << *itl << " ; Lowerbound: " << lowerBound << " ; Higherbound: " << upperBound << std::endl;
-		if (*itl > high[0])
+		if (low[*itSeq - 1] > high[0])
 			std::advance(ith, upperBound);
-		ith = high.insert(ith, *itl);
 		nbInserted++;
-		itl = low.erase(itl);
+		ith = high.insert(ith, low[*itSeq - 1]);
+		++itSeq;
 	}
 	if (high[0] < 0)
 		high.erase(high.begin());
@@ -139,8 +172,16 @@ T	FJSort(char **av)
 	T	vHigh;
 	T	vLow;
 
+	if (!av[2])
+	{
+		T	res;
+
+		checkArg(av[1]);
+		res.push_back(std::atoi(av[1]));
+		return (res);
+	}
 	vPair = fillContainerPairs< U >(av); //Try catch
 	vPair = FJMergeSort(vPair);
 	splitPairs(vPair, vHigh, vLow);
-	return (FJInsertSort(vHigh, vLow));
+	return (FJInsertSort(vHigh, vLow, vPair.size()));
 }

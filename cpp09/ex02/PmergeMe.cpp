@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 09:34:00 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/23 17:26:27 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:33:02 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	checkArg(std::string arg)
 	int 				i;
 
 	iss >> i;
-	if (!iss.eof() || iss.fail())
+	if (!iss.eof() || iss.fail() || i < 0)
 		throw std::exception();
 }
 
@@ -33,17 +33,30 @@ int	getTime(struct timeval startTime) // Time in ms since startTime
 	return (time);
 }
 
-void	printContainerPairs(std::vector< std::pair<int, int> >& v)
+std::vector<int>	initJSSequence(int	n)
 {
-	std::vector< std::pair<int, int> >::iterator	it;
-	int 						i = 0;
+	int 				prev = 1;
+	int 				next = 1;
+	int 				i;
+	std::vector<int>	v;
 
-	for (it = v.begin(); it != v.end(); ++it)
+	v.push_back(1);
+	while (next < n)
 	{
-		std::cout << "v[" << i << "]: ";
-		std::cout << "first: " << it->first << "; ";
-		std::cout << "second: " << it->second << "; " << std::endl;
-		i++;
+		i = next;
+		while (i > prev)
+		{
+			v.push_back(i);
+			i--;
+		}
+		prev = next;
+		next += 2 * i;
 	}
-	std::cout << std::endl;
+	i = n;
+	while (i > prev)
+	{
+		v.push_back(i);
+		i--;
+	}
+	return (v);
 }

@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 07:08:09 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/17 13:31:11 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:09:55 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,17 @@ int	convertDate(std::string datestr)
 	return ((y << 9) + (m << 5) + d);
 }
 
+float	convertValue(std::string valuestr)
+{
+	std::stringstream	ss(valuestr);
+	float				f;
+
+	ss >> f;
+	if (!ss.eof() || ss.fail())
+		throw InvalidValueException();
+	return f;
+}
+
 void	lineManager(int& date, float& value, std::string line, std::string separator)
 {
 	int 		comma;
@@ -82,7 +93,7 @@ void	lineManager(int& date, float& value, std::string line, std::string separato
 
 	date = convertDate(datestr);
 
-	value = static_cast<float>(std::atof(valuestr.c_str()));
+	value = convertValue(valuestr);
 }
 
 void	fillMap(std::map<int, float>& data)
