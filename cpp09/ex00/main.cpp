@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 07:42:53 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/24 15:26:24 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/26 16:05:42 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 	if (ac != 2)
 	{
 		std::cout << "This program needs an infile as an argument." << std::endl;
-		return (0);
+		return (-1);
 	}
 
 	std::map<int, float> data;
@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 
 	std::ifstream	infile(av[1], std::ios::in);
 	std::string		line;
-	std::getline(infile, line); // A proteger
+	std::getline(infile, line);
 	while (std::getline(infile, line))
 	{
 		int 	date;
@@ -54,6 +54,7 @@ int	main(int ac, char **av)
 		catch(std::exception &e)
 		{
 			std::cerr << e.what() << std::endl;
+			return (-1);
 		}
 	}
 }
