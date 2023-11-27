@@ -39,7 +39,7 @@ int	main(int ac, char **av)
 				stack.push(std::atoi(&av[1][i]));
 			else if (isop(av[1][i]))
 			{
-				int err = compute (stack, av[1][i]);
+				int err = compute(stack, av[1][i]);
 				if (err == -1)
 				{
 					std::cout << "Not enough numbers in the stack to process operand" << std::endl;

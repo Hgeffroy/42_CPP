@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 07:42:53 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/26 16:05:42 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/27 08:06:36 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int ac, char **av)
 		{
 			lineManager(date, value, line, "|");
 			if (value < 0 || value > 1000)
-				throw InvalidValueException();
+				throw std::invalid_argument("Value should be between 0 and 1000");
 			it = data.lower_bound(date);
 			if (it != data.begin() && it->first != date && it->first > data.begin()->first)
 				it--;
@@ -54,7 +54,6 @@ int	main(int ac, char **av)
 		catch(std::exception &e)
 		{
 			std::cerr << e.what() << std::endl;
-			return (-1);
 		}
 	}
 }

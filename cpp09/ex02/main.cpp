@@ -47,6 +47,7 @@ int	main(int ac, char **av)
 	catch (std::exception& e)
 	{
 		std::cout << "Vector not sorted" << std::endl;
+		return (-1);
 	}
 	printContainer(v, "Vector");
 	std::cout << "Time to sort with vectors (in us): " << timeToSort << std::endl;
@@ -72,9 +73,8 @@ int	main(int ac, char **av)
 	catch (std::exception& e)
 	{
 		std::cout << "Deque not sorted" << std::endl;
+		return (-1);
 	}
 	printContainer(dq, "Deque");
 	std::cout << "Time to sort with deque (in us): " << timeToSort << std::endl;
-
-
 }
