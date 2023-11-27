@@ -31,7 +31,7 @@ OBJ_DIR         =       .objs/
 
 #--flags-----------------------------------------------------------------------#
 
-CFLAGS          =       -Wall -Wextra -std=c++98 -I $(INC_DIR) #-Werror
+CFLAGS          =       -Wall -Wextra -Werror -std=c++98 -I $(INC_DIR)
 CPP				=		c++
 
 #--debug flags-----------------------------------------------------------------#

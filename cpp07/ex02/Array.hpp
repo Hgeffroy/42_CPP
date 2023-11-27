@@ -35,6 +35,7 @@ public:
 	Array<T>( unsigned int n );
 
 	Array<T>&	operator=( Array<T> const & toAssign );
+	Array<T>&	operator=( Array<T> const & toAssign ) const;
 	T&		operator[]( unsigned int n );
 
 };

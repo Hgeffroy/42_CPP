@@ -6,7 +6,7 @@
 /*   By: hgeffroy <hgeffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 07:08:09 by hgeffroy          #+#    #+#             */
-/*   Updated: 2023/11/27 08:41:57 by hgeffroy         ###   ########.fr       */
+/*   Updated: 2023/11/27 08:43:33 by hgeffroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	convertDate(std::string datestr)
 	std::string 	separator = "-";
 
 	dash1 = datestr.find(separator, 0);
-	y = std::atoi(datestr.substr(0, dash1).c_str());
+	y = std::atoi(datestr.substr(0, dash1).c_str()); // pas fou de atoi, faire le stringstream...
 	dash2 = datestr.find(separator, dash1 + 1);
 	m = std::atoi(datestr.substr(dash1 + 1, dash2).c_str());
 	d = std::atoi(datestr.substr(dash2 + 1, datestr.length()).c_str());

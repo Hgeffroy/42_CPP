@@ -59,3 +59,11 @@ T&	Array<T>::operator[]( unsigned int n )
 	return (this->_array[n]);
 }
 
+template <typename T>
+T&	Array<T>::operator[]( unsigned int n ) const
+{
+	if (n >= this->_size)
+		throw std::exception();
+	return (this->_array[n]);
+}
+
